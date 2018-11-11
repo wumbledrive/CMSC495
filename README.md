@@ -29,7 +29,8 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 * [Sample Test Cases](#sampletestcases)
   
 ## User Guide
-  
+  ![Image1](https://cdn.discordapp.com/attachments/506155193801637898/511275563575410699/Valhalla_Hall.png "Image 1")
+
 #### Notes
 |Key |Description |
 |---|---|
@@ -134,7 +135,7 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 5.  On selection of files and button click
 
 ### <a name="openingtutorial">Opening Tutorial (Alpha)</a>
-
+  ![Image2](https://cdn.discordapp.com/attachments/506155193801637898/511275572161413126/Tutorial.png "Image 2")
 (*Storyline chosen during Alpha development*)
 
 **Storyline A**: Our player is being attacked by assassins in room/home.
@@ -155,7 +156,7 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 7. Screen goes to white but leaving player body in the middle of the screen still visible. Two Valkyrie NPC’s move quickly toward the player and carry the Players Soul off screen. End Tutorial.
 
 ### <a name="entervalhalla"> Enter Valhalla</a>
-
+![Image3](https://cdn.discordapp.com/attachments/506155193801637898/511275563575410699/Valhalla_Hall.png "Image 3")
 1.  After the end of the Tutorial the Player wakes up in a room with a bed and a door. Tutorial text appears welcoming and directing the player to leave the room by moving through the door.
 2.  The door opens to Valhalla Hall. Valhalla Hall is a large room with friendly NPC’s moving, standing, fighting, and eating. Player can interact with NPC’s to acquire some gear/food.
 3.  In the upper corner of Valhalla Hall are two Valkyrie NPCs standing in front of a door. Interacting with the Valkyries tells the player why they were brought to Valhalla, and triggers Odin’s entrance.
@@ -178,6 +179,7 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 9.  Player returns to Odin and reports.
 
 ### <a name="troubleinniflheim"> First Level Draft - Trouble in Niflheim</a>
+![Image4](https://cdn.discordapp.com/attachments/506155193801637898/511275550250369044/Boss_Fight.png "Image 4")
 1.  Player exits Valhalla Hall and moves Northwest.
 2.  ``Encounters with friendly/enemy NPCs during journey.``
 3.  Arrives at Niflheim Portal, Guarded by Valkyrie.
@@ -201,6 +203,7 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 |Red Castle|Valhalla Hall|
 |Houses| Residents of Asgard |
 |Green Trees | Trees|
+![Image5](https://cdn.discordapp.com/attachments/506155193801637898/511275536920870913/Asgard_Map.png "Image 5")
 
 ---
 
