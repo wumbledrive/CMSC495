@@ -5,7 +5,9 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 
 
 ### Table of Contents
-#####User Guide
+
+##### User Guide
+
 * [Controls](#controls)
 * [Player UI](#playerui)
 * [Additional Player UI & Settings](#additionalplayeruisettings)
@@ -19,7 +21,9 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 * [Generic Level Breakdown](#genericlevelbreakdown)
 * [First Level Draft - Trouble in Niflheim](#troubleinniflheim)
 * [Map](#map)
-#####Test Plan
+
+##### Test Plan
+
 * [Introduction](#introduction)
 * [Approach](#approach)
 * [Responsibilities](#responsibilities)
