@@ -3,11 +3,8 @@
 ##### Team Members:  
 Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sean Donovan.
 
-
 ### Table of Contents
-
 ##### User Guide
-
 * [Controls](#controls)
 * [Player UI](#playerui)
 * [Additional Player UI & Settings](#additionalplayeruisettings)
@@ -23,7 +20,6 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 * [Map](#map)
 
 ##### Test Plan
-
 * [Introduction](#introduction)
 * [Approach](#approach)
 * [Responsibilities](#responsibilities)
@@ -31,8 +27,6 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 * [Testing Environment](#testingenvironment)
 * [Test Deliverables](#testdeliverables)
 * [Sample Test Cases](#sampletestcases)
-  
-  ---
   
 ## User Guide
   
@@ -199,7 +193,7 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 13.  Portal Appears with Valkyrie that takes Player back to Valhalla/Asgard.
 14.  Player returns to Odin and updates him with the letter and information about the encounter in Niflheim.
 
-### <a name="map"> Mapa</a>
+### <a name="map"> Map</a>
 
 |Map Item | Description|
 |---|---|
@@ -278,8 +272,7 @@ If this program is ran in an environment not similar to that of testing, results
 |Edge Cases|Cases that have been identified as areas of interest.|
 |Final Test Report|Report summarizing all testing that has been done to include documented failures.|
 
-### <a name="introduction"> Sample Test Cases
-</a>
+### <a name="sampletestcases"> Sample Test Cases </a>
 
 ### Character Test Cases
 |**Test Cases**| **Description** | **Pass/Fail**|
