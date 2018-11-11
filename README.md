@@ -1,13 +1,25 @@
 # Valhalla’s Finest
-### CMSC 495 --- Team 5 --- Week 2
-
-
-## Test Plan
-
+### CMSC 495 | Team 5
 ##### Team Members:  
 Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sean Donovan.
 
+
 ### Table of Contents
+#####User Guide
+* [Controls](#controls)
+* [Player UI](#playerui)
+* [Additional Player UI & Settings](#additionalplayeruisettings)
+* [Sound FX and Background Music Checklist](#soundeffectsbackgroundmusicchecklist)
+* [Animations Checklist](#animationschecklist)
+* [Game Mechanics/Weapons](#gamemechanicsweapons)
+* [On Launch/Home UI](#launchhomeui)
+* [Start New/Load Game UI](#startnewloadgameuserinterface)
+* [Opening Tutorial (Alpha)](#openingtutorial)
+* [Enter Valhalla](#entervalhalla)
+* [Generic Level Breakdown](#genericlevelbreakdown)
+* [First Level Draft - Trouble in Niflheim](#troubleinniflheim)
+* [Map](#map)
+#####Test Plan
 * [Introduction](#introduction)
 * [Approach](#approach)
 * [Responsibilities](#responsibilities)
@@ -15,6 +27,186 @@ Andres Giraldo, Jesse Nelson Nicholas Troyer, Roger Manga, Samuel Hoffman, & Sea
 * [Testing Environment](#testingenvironment)
 * [Test Deliverables](#testdeliverables)
 * [Sample Test Cases](#sampletestcases)
+  
+  ---
+  
+## User Guide
+  
+#### Notes
+|Key |Description |
+|---|---|
+|`Gray Text` |Items in blue appear as stretch goals. Images in this document are not part of final product. They are only being used as placeholders to envision our product goal.|
+|*Italics Text* | Action items that team will develop further later.|
+|Images| All images are screenshots taken from the Roll20.net platform.
+
+### <a name="controls">Controls</a> 
+|Key |Description |
+|---|---|
+|**Movement** | WASD Keys; Basic running/walking animations; sounds for footsteps  
+|**Mouse** | Aim player direction, navigate menus  
+|**Mouse Left Click** | Attack, Confirm; Animations/SoundFX for attacks with various weapons; Appropriate sound effects for hit, miss, blocked attacks, etc.
+|``Mouse Right Click``| ``Block; Blocking animations with different shields; Sound effects for blocked attacks``|
+|``Space`` | ``Dodge Roll; Dodging animation; Particle and sound effects for dodges``
+|**E** | Interact
+|**Escape** | Player Menu; Different designs for each interface; sound effects for menu selections
+
+### <a name="playerui">Player UI</a>
+|Key |Description |
+|---|---|
+| Hearts | Represents health (Player starts with 4 hearts); Sound effects for low health
+|``Magic/Energy``| ``Tied to abilities given by weapons``
+|``Shields``| ``Represents additional armor``
+
+### <a name="additionalplayeruisettings">Additional Player UI & Settings</a>
+##### Inventory Equip Screen
+* Weapons/Magic Items (Allow player to select, equip, and delete items)
+##### Settings Screen
+* Save Game
+* Exit Game
+* ``Change Screen Size Settings``
+* ``Audio Settings``
+
+### <a name="soundeffectsbackgroundmusicchecklist">Sound Effects & Background Music Checklist</a>
+##### Menu/Settings/Tutorial Text:
+* Button click/Selection
+##### Background Music:
+* Launch Screens
+* Game Zones/Levels/Maps (I.E. Music changing when moving from tutorial Zones to Valhalla Hall)
+* Boss/Important NPC (I.E Music changing when encountering a specific Boss/NPC)
+* Congratulations Music (when a character has finished a Quest or the Game)
+##### Player SoundFX
+* Movement
+* Weapon(s)/Magic Attacks (Specific sounds when using different attacks)
+* Losing Health/Near Death
+* Gaining Health
+* Picking up an Item
+##### NPC (non-player character) FX
+* Movement
+* Weapon(s)/Magic Attacks (Specific sounds when using different attacks)
+* Losing Health/Near Death
+* Gaining Health
+
+### <a name="animationschecklist">Animations Checklist</a>
+##### Home UI
+* ``Menu Background Animations``
+##### Game Zones/Levels/Objects
+* Doors Opening/Closing
+* Chests Opening/Closing
+* Glowing Lights
+* Game Zones/Level Transitions
+##### Player Animations
+* Movement
+* Interaction
+* Weapon(s)/Magic Attacks
+* Healing
+* Picking up an item
+* Losing Health/Near Death
+##### Player UI Animations
+* Losing/Gaining Health
+* Losing/Gaining Magical Power
+##### NPC
+* Movement
+* Interaction
+* Weapon(s)/Magic Attacks/Taunts
+* Boss fight special animations
+* Healing
+* Picking up an item
+
+### <a name="gamemechanicsweapons">Game Mechanics/Weapons</a>
+* Sword - Slashes in front of character
+* Shield - Blocks projectiles
+* Crossbow - Shoots projectile
+* Fire Wand - Uses magic resource, shoots projectile.
+* Lesser Hammer of Thor - Shoots lightning, and attacks in front of character
+
+### <a name="launchhomeui">On Launch/Home UI</a>
+
+1.  Open Launch file.
+2.  Game opens in window/full screen.
+3.  Game title appears in the center of the screen with labelled Start button below, Background Music plays.
+4.  Click Start or press Enter to go to the **Start New**/**Load Game** interface.
+5.  ``Settings button appears under Start button. Clicking Settings button or Pressing ESC key will open a prompt which will allow user to change screen size settings.``
+
+### <a name="startnewloadgameuserinterface">Start New/Load Game User Interface</a>
+
+1.  After the Start button is clicked on the main menu, the **Start New**/**Load Game** buttons appear, and the background music plays.
+2.  The **Load Game** menu contains a list of saved game file names and buttons labelled New Game and Continue Game.
+3.  Clicking New Game starts the **Opening Tutorial**.
+4.  Selecting a saved game file, and then clicking Continue Game loads the saved game file.
+5.  On selection of files and button click
+
+### <a name="openingtutorial">Opening Tutorial (Alpha)</a>
+
+(*Storyline chosen during Alpha development*)
+
+**Storyline A**: Our player is being attacked by assassins in room/home.
+**Storyline B**: Our player is on the field of battle fighting various opponents.
+
+1. After clicking New Game, the Opening Tutorial begins and the Background Music plays.
+2. Player character appears in center of screen in a sandbox level with NPC’s around.
+3. Tutorial text appears directing player on the following:
+	* ``Give your character a name: Enter Player Name.``
+	* Movement: WASD keys and switching direction with Mouse.
+	* Interact with friendly NPCs (non-player characters): Go to an NPC and click E.
+	* Pick up weapons/items: Move to a weapon/item and click E.
+	* Open Player Settings: Press ESC and review how to save game, look at inventory, eat/drink food/potions and equip weapons. (Will make sure to equip weapon before player can continue).
+4. After the player equips a weapon an enemy NPC appears. Tutorial text appears instructing the player to do the following:
+	* Attack the NPC: Move towards the NPC and Left-Click on Mouse. Weapon should reach out towards enemy.
+5. After the player defeats an enemy, two more enemies appear out of the shadows and attack the player (This scenario is supposed to eventually kill the player.) Hearts in Player UI begin to lose color. Tutorial text appears explaining player health.
+6. Player is shown dead having been defeated by enemies.
+7. Screen goes to white but leaving player body in the middle of the screen still visible. Two Valkyrie NPC’s move quickly toward the player and carry the Players Soul off screen. End Tutorial.
+
+### <a name="entervalhalla"> Enter Valhalla</a>
+
+1.  After the end of the Tutorial the Player wakes up in a room with a bed and a door. Tutorial text appears welcoming and directing the player to leave the room by moving through the door.
+2.  The door opens to Valhalla Hall. Valhalla Hall is a large room with friendly NPC’s moving, standing, fighting, and eating. Player can interact with NPC’s to acquire some gear/food.
+3.  In the upper corner of Valhalla Hall are two Valkyrie NPCs standing in front of a door. Interacting with the Valkyries tells the player why they were brought to Valhalla, and triggers Odin’s entrance.
+4.  Odin makes a grand entrance and the Valkyries move accordingly. Odin approaches and talks to the player. Odin states he heard of the players reputation on earth and is glad he is here etc etc.
+5.  Odin asks the player if he could do a small quest for him while he is here. Player auto accepts.
+6.  Odin gives player quest to go to the Northwest of Asgard and to take a portal to Niflheim, suspecting that the Ice Giants are up to something.
+7.  It is also explained that if the player dies they will resurrect in their bed in Valhalla, Odin then kills the player.
+8.  When the player returns to Odin, the player is gifted with a Sword and Shield, and allowed to exit Valhalla Hall to make the journey to the portal. (refer to map)
+
+### <a name="genericlevelbreakdown"> Generic Level Breakdown</a>
+
+1.  Odin asks Player to investigate X by entering portal located in the Y part of the map.
+2.  Player journeys through open world to Y part of the map and takes portal to X.
+3.  Player fights/interacts enemy NPCs towards the Boss Fight.
+4.  Boss is found interacting with Mysterious NPC giving clues about plans to overthrow Odin.
+5.  Mysterious NPC runs away, Boss engages player in Boss Fight.
+6.  Boss fight challenges player to figure out best method to defeat Boss.
+7.  Player defeats Boss, gains access to more clues and other items.
+8.  Valkyries give portal back to Asgard to player.
+9.  Player returns to Odin and reports.
+
+### <a name="troubleinniflheim"> First Level Draft - Trouble in Niflheim</a>
+1.  Player exits Valhalla Hall and moves Northwest.
+2.  ``Encounters with friendly/enemy NPCs during journey.``
+3.  Arrives at Niflheim Portal, Guarded by Valkyrie.
+4.  Valkyrie NPCs, stop player and communicate the dangers that exist in Niflheim, may suggest player save game.
+5.  Player can then move and enter Niflheim Portal.
+6.  Niflheim map is designed so that activity (fighting/interacting NPCs) appears toward the eventual map NPC Boss. So, as long as the player continues to search for activity then will move closer to the Boss fight.
+7.  Niflheim’s ice themed NPCs attack the player as the player explores the Niflheim map (some are melee, some are ranged).
+8.  Player encounters Niflheim Boss, Jotnar the Ice Giant King, talking with another mysterious NPC.
+9.  The Niflheim Boss agrees with the mysterious NPC to, “Rally his Ice Giant Army to destroy Odin”, and then notices the Player listening.
+10.  The mysterious figure runs away, and the Ice Giant states, “It matters not that you were listening, for you will be smashed by me, Jotnar the Ice Giant King!”
+11.  Boss fight begins. Jotnar’s hearts appear on screen. Jotnar uses timed attacks against the player, I.E spinning in a whirlwind and then taking a rest. The player cannot damage Jotnar while he is spinning, and must wait until he is resting to attack. ``Jotnar can be given an additional ice based attack.``
+12.  After Jotnar is slain, he drops a loot bag/items. Amongst these items is a letter between Jotnar and an NPC known as “M”.
+13.  Portal Appears with Valkyrie that takes Player back to Valhalla/Asgard.
+14.  Player returns to Odin and updates him with the letter and information about the encounter in Niflheim.
+
+### <a name="map"> Mapa</a>
+
+|Map Item | Description|
+|---|---|
+|Yellow Portal (Fire)| Transport character to each Game Zone/Level
+|Red Castle|Valhalla Hall|
+|Houses| Residents of Asgard |
+|Green Trees | Trees|
+
+---
+
+## Test Plan
 
 ### <a name="introduction">Introduction</a>
 The purpose of this documentation is to define the perimeters and metrics in which Valhalla’s Finest will be tested. This documentation will clearly define the roles and responsibilities that each team member will acquire as well as the manner in which the test will be conducted. With the publication of this documentation, we will ensure that testing will be conducted in a uniform, efficient, and precise manner. This will ensure that the player will receive the best gaming experience and that no critical fault will occur.
