@@ -1574,7 +1574,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.50265485
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1633,7 +1633,7 @@ SpriteRenderer:
   m_SortingLayerID: -1105624069
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 400eaffeeeb73bc4996618cde83686ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2100,8 +2100,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66.03, y: 0.73}
-  m_SizeDelta: {x: 55.66, y: 55.66}
+  m_AnchoredPosition: {x: -67.9, y: 0.15499}
+  m_SizeDelta: {x: 61.43, y: 106.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286316537
 MonoBehaviour:
@@ -2122,7 +2122,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dde58ce51c9dcc1448ee183a32837e69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49526cb41f56f2741b384201b21a9c8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
