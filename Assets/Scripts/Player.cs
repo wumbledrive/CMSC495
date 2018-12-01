@@ -23,6 +23,10 @@ public class Player : Character {
         health.Initialize(maxHealth, maxHealth);
         mana.Initialize(maxMana, maxMana);
 
+        pause.pauseUI.SetActive(false);
+        pause.invUI.SetActive(false);
+        pause.gameOverUI.SetActive(false);
+
         base.Start();
 	}
 	
