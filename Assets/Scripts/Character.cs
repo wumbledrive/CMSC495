@@ -6,19 +6,10 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour {
 
     //Speed and Direction for movement
-    [SerializeField]
-    private float speed;
-
-    private Rigidbody2D body;
-
+    public float speed;
+    public Rigidbody2D body;
     protected Vector2 direction;
-
     public Animator myAnim;
-
-    // Use this for initialization
-    protected virtual void Start() {
-        body = GetComponent<Rigidbody2D>();
-	}
 	
 	// Update is called once per frame
 	protected virtual void Update() {

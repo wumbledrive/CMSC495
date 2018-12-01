@@ -14,13 +14,11 @@ public class Player : Character {
     private float maxHealth = 100;
 
 	// Use this for initialization
-	protected override void Start() {
+	protected void Start() {
 
         //Initializes health and mana values
         health.Initialize(maxHealth, maxHealth);
         mana.Initialize(maxMana, maxMana);
-
-        base.Start();
 	}
 	
 	// Update is called once per frame
