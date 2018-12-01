@@ -24,11 +24,6 @@ public class SceneLoader : MonoBehaviour {
     }
     public void loadTestMapScene()
     {
-        //Sam EDIT: resets game over, paused, or inventory open status when new game is selected, I'll get the scene itself resetting soon
-        Time.timeScale = 1;
-        PauseMenu.gameOver = false;
-        PauseMenu.gamePaused = false;
-        PauseMenu.invOpen = false;
         //Loads scene at index 2 (test map)
         SceneManager.LoadScene(2);
     }

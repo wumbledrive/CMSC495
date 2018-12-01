@@ -10,6 +10,9 @@ public class Player : Character {
     [SerializeField]
     private Status mana;
 
+    [SerializeField]
+    private PauseMenu pause;
+
     private float maxMana = 100;
     private float maxHealth = 100;
 
@@ -19,6 +22,8 @@ public class Player : Character {
         //Initializes health and mana values
         health.Initialize(maxHealth, maxHealth);
         mana.Initialize(maxMana, maxMana);
+
+        base.Start();
 	}
 	
 	// Update is called once per frame
@@ -27,15 +32,13 @@ public class Player : Character {
         GetInput();
         base.Update();
 
-
-        //Sam EDIT:if player HP drops to 0 it triggers death update in the menu system and resets health and mana
         if (health.MyCurrentValue == 0)
         {
             PauseMenu.gameOver = true;
             health.MyCurrentValue = maxHealth;
             mana.MyCurrentValue = maxMana;
         }
-    }
+	}
 
     //Gets the current direction based on user input
     private void GetInput()
@@ -49,6 +52,9 @@ public class Player : Character {
             mana.MyCurrentValue -= 15;
         if (Input.GetKeyDown(KeyCode.L))
             mana.MyCurrentValue += 15;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            pause.PauseGame();
 
         //Zeroes out direction
         direction = Vector2.zero;

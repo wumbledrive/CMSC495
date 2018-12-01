@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Abstract class for a character (Player, Enemy, NPC, etc.)
-public abstract class Character : MonoBehaviour
-{
+public abstract class Character : MonoBehaviour {
 
     //Speed and Direction for movement
     [SerializeField]
@@ -17,14 +16,12 @@ public abstract class Character : MonoBehaviour
     public Animator myAnim;
 
     // Use this for initialization
-    protected virtual void Start()
-    {
+    protected virtual void Start() {
         body = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    protected virtual void Update()
-    {
+	}
+	
+	// Update is called once per frame
+	protected virtual void Update() {
         body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
 
         myAnim.SetFloat("moveX", body.velocity.x);

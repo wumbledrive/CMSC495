@@ -1,1 +1,2 @@
-This Branch is for the current build of the game.
+# CMSC495
+CMSC 495 Team Project
