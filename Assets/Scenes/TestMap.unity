@@ -1369,10 +1369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  body: {fileID: 916299167}
   myAnim: {fileID: 916299165}
-  health: {fileID: 0}
-  mana: {fileID: 0}
+  health: {fileID: 359015583}
+  mana: {fileID: 2117785616}
 --- !u!50 &916299167
 Rigidbody2D:
   serializedVersion: 4

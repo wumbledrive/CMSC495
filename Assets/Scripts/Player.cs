@@ -14,7 +14,7 @@ public class Player : Character {
     private float maxHealth = 100;
 
 	// Use this for initialization
-	protected void Start() {
+	protected override void Start() {
 
         //Initializes health and mana values
         health.Initialize(maxHealth, maxHealth);
