@@ -73,4 +73,11 @@ public class Player : Character {
         if (Input.GetKey(KeyCode.D))
             direction += Vector2.right;
     }
+
+    //SAMS EDIT: method runs when the player object is sent a message causing them to take damage
+    //EXAMPLE MESSAGE: (playerobject).SendMessage("TakeDamage", 5);
+    public void TakeDamage(float damage)
+    {
+        health.MyCurrentValue -= damage;
+    }
 }
