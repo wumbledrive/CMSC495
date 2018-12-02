@@ -719,6 +719,11 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 1023.18
       objectReference: {fileID: 0}
+    - target: {fileID: 114121276153130246, guid: 637bb258c415272428203f2e3fb5f1ad,
+        type: 2}
+      propertyPath: m_Text
+      value: Vallhalla's Finest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637bb258c415272428203f2e3fb5f1ad, type: 2}
   m_IsPrefabAsset: 0

@@ -1468,9 +1468,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1177319902}
   - component: {fileID: 1177319901}
-  - component: {fileID: 1177319900}
   - component: {fileID: 1177319904}
   - component: {fileID: 1177319903}
+  - component: {fileID: 1177319900}
   m_Layer: 0
   m_Name: Skelleton
   m_TagString: Untagged
@@ -1489,13 +1489,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0b4e07941164e4ea52679a6daa7119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   stopDistance: 1
   chaseRange: 5
-  damage: 1
+  damage: 5
   lastAttackTime: 0
-  attackRate: 5
+  attackRate: 1
   attackDelay: 500
+  attacking: 0
 --- !u!212 &1177319901
 SpriteRenderer:
   m_ObjectHideFlags: 0

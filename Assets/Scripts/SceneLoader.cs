@@ -25,6 +25,11 @@ public class SceneLoader : MonoBehaviour {
     public void loadTestMapScene()
     {
         //Loads scene at index 2 (test map)
+        //SAM EDIT: Resets in game menus and game speed
+        PauseMenu.gameOver = false;
+        PauseMenu.gamePaused = false;
+        PauseMenu.invOpen = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(2);
     }
 }
