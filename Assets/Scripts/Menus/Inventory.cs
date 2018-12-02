@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,16 @@ public class Inventory : MonoBehaviour
     [SerializeField] List<Item> items;
     [SerializeField] Transform parent;
     [SerializeField] ItemSlots[] slots;
+
+    public event Action<Item> ItemClickedEvent;
+
+    private void Awake()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].LeftClickEvent += ItemClickedEvent;
+        }
+    }
 
     //OnValidate is called when script is loaded or value is changed
     private void OnValidate()
@@ -58,5 +68,10 @@ public class Inventory : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public bool IsFull()
+    {
+        return items.Count >= slots.Length;
     }
 }

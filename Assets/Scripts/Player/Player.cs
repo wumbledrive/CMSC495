@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : Character {
 
-    [SerializeField]
-    private Status health;
+    
+    public Status health;
 
     [SerializeField]
     private Status mana;
@@ -13,11 +13,17 @@ public class Player : Character {
     [SerializeField]
     private PauseMenu pause;
 
+    public CharacterStats Intelligence;
+    public CharacterStats Strength;
+    public CharacterStats Defense;
+    public CharacterStats Magic;
+
     private float maxMana = 100;
     private float maxHealth = 100;
+    internal static readonly Player MyInstance;
 
-	// Use this for initialization
-	protected override void Start() {
+    // Use this for initialization
+    protected override void Start() {
 
         //Initializes health and mana values
         health.Initialize(maxHealth, maxHealth);
@@ -72,5 +78,10 @@ public class Player : Character {
             direction += Vector2.down;
         if (Input.GetKey(KeyCode.D))
             direction += Vector2.right;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health.MyCurrentValue -= damage;
     }
 }

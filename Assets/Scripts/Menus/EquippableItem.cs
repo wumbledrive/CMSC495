@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
 //An enumerator for each equipment type (Subject to change)
-public enum equipment
+public enum Equipment
 {
     Helmet,
     Chestpiece,
-    Gloves,
+    Pants,
     Weapon,
-    Shield,
-    Accessory
+    Sheild,
+    Accessory,
 }
 
 //CreateAssetMenu makes something createable in the Unity Asset Menu (Like creating a folder)
@@ -16,11 +16,13 @@ public enum equipment
 public class EquippableItem : Item
 {
     //Some stats for the equipment (Subject to change)
-    public int strength;
-    public int speed;
-    public int defense;
+    public int Intelligence;
+    public int Strength;
+    public int Dexterity;
+    public int Magic;
+    public int Defense;
 
     //Defining the equipment type
-    public equipment piece;
+    public Equipment type;
 
 }

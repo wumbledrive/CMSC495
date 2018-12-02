@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 //Each item is stored in a specfic spot in the inventory UI
-public class ItemSlots : MonoBehaviour
+public class ItemSlots : MonoBehaviour, IPointerClickHandler
 {
     //The image for the slot itself
     [SerializeField]
     private Image image;
+
+    public event Action<Item> LeftClickEvent;
 
     //Gets the item in the slot and sets the item
     private Item _item;
@@ -31,8 +33,17 @@ public class ItemSlots : MonoBehaviour
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData != null && eventData.button == PointerEventData.InputButton.Left)
+        {
+            if (Item != null && LeftClickEvent != null)
+                LeftClickEvent(Item);
+        }
+    }
+
     //OnValidate is called when script is loaded or value is changed
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
         if (image == null)
             image = GetComponent<Image>();

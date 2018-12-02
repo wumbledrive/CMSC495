@@ -53,15 +53,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Character.cs" />
-     <Compile Include="Assets\Scripts\EquippableItem.cs" />
-     <Compile Include="Assets\Scripts\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Item.cs" />
-     <Compile Include="Assets\Scripts\ItemSlots.cs" />
-     <Compile Include="Assets\Scripts\PauseMenu.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\SceneLoader.cs" />
-     <Compile Include="Assets\Scripts\Status.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyMoveAI.cs" />
+     <Compile Include="Assets\Scripts\Events\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\Menus\EquipmentPanel.cs" />
+     <Compile Include="Assets\Scripts\Menus\EquipmentSlots.cs" />
+     <Compile Include="Assets\Scripts\Menus\EquippableItem.cs" />
+     <Compile Include="Assets\Scripts\Menus\HealthPotion.cs" />
+     <Compile Include="Assets\Scripts\Menus\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Menus\InventoryMenuManager.cs" />
+     <Compile Include="Assets\Scripts\Menus\Item.cs" />
+     <Compile Include="Assets\Scripts\Menus\ItemSlots.cs" />
+     <Compile Include="Assets\Scripts\Menus\iUseable.cs" />
+     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Menus\StatsPanel.cs" />
+     <Compile Include="Assets\Scripts\Menus\StatValues.cs" />
+     <Compile Include="Assets\Scripts\Player\Character.cs" />
+     <Compile Include="Assets\Scripts\Player\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Player\StatModifiers.cs" />
+     <Compile Include="Assets\Scripts\Player\Status.cs" />
  <Reference Include="Cinemachine">
  <HintPath>C:/Users/Jesse/Documents/GitHub/CMSC495/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
