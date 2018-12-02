@@ -63,8 +63,9 @@ public class Player : Character {
         if (Input.GetKeyDown(KeyCode.L))
             mana.MyCurrentValue += 15;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            pause.PauseGame();
+        /*SAM COMMENTED OUT: I think this is what was causing pause not to work on escape lol
+         if (Input.GetKeyDown(KeyCode.Escape))
+            pause.PauseGame();*/
 
         //Zeroes out direction
         direction = Vector2.zero;
