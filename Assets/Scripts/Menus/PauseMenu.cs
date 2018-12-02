@@ -17,10 +17,9 @@ public class PauseMenu : MonoBehaviour {
         {
             if (gamePaused)
             {
+                Debug.Log("oof");
                 ResumeGame();
-            }
-            else
-            {
+            }else{
                 PauseGame();
             }
         }
