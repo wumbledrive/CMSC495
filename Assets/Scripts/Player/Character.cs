@@ -11,7 +11,13 @@ public abstract class Character : MonoBehaviour {
 
     private Rigidbody2D body;
 
+    //boolean for yes/no attacking
+    protected bool isAttacking = false;
+
     protected Vector2 direction;
+
+    //Coroutine variable to track animation timing attack issues
+    protected Coroutine attackRoutine;
 
     public Animator myAnim;
 
@@ -19,20 +25,12 @@ public abstract class Character : MonoBehaviour {
     protected virtual void Start() {
         body = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	protected virtual void Update() {
-        body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
 
-        myAnim.SetFloat("moveX", body.velocity.x);
-        myAnim.SetFloat("moveY", body.velocity.y);
+    // Update is called once per frame
+    protected virtual void Update()
+    {
 
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-        {
-
-            myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-        }
+        HandleLayers();
     }
 
     private void FixedUpdate()
@@ -45,5 +43,55 @@ public abstract class Character : MonoBehaviour {
     {
         //Moves character based on speed and direction
         body.velocity = direction.normalized * speed;
+
+
+    }
+
+    public void HandleLayers()
+    {
+        body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
+
+        myAnim.SetFloat("moveX", body.velocity.x);
+        myAnim.SetFloat("moveY", body.velocity.y);
+
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+
+            myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+
+            StopAttack();
+        }
+
+        if (isAttacking)
+        {
+            ActivateLayer("AttackLayer");
+        }
+
+    }
+
+    public void ActivateLayer(string layerName)
+    {
+        for (int i = 0; i < myAnim.layerCount; i++)
+        {
+            myAnim.SetLayerWeight(i, 0);
+        }
+
+        myAnim.SetLayerWeight(myAnim.GetLayerIndex(layerName), 1);
+    }
+
+    //Stop attack on movement
+    public void StopAttack()
+    {
+
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+            isAttacking = false;
+            myAnim.SetBool("attack", isAttacking);
+        }
+
+
     }
 }
+

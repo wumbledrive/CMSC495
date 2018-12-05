@@ -79,10 +79,29 @@ public class Player : Character {
             direction += Vector2.down;
         if (Input.GetKey(KeyCode.D))
             direction += Vector2.right;
+        //Spacebar for attack
+        if (Input.GetKeyDown(KeyCode.Space))
+            attackRoutine = StartCoroutine(Attack());
     }
 
     public void TakeDamage(float damage)
     {
         health.MyCurrentValue -= damage;
+    }
+
+    //Attack timing and stopattack check
+    private IEnumerator Attack()
+    {
+        if (!isAttacking && !(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1))
+        {
+            isAttacking = true;
+
+            myAnim.SetBool("attack", isAttacking);
+
+            yield return new WaitForSeconds(0.8F); //cast time on spacebar press
+
+            StopAttack();
+        }
+
     }
 }
