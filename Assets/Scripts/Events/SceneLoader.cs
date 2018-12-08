@@ -15,12 +15,14 @@ public class SceneLoader : MonoBehaviour {
     public void loadMainMenuScene()
     {
         //Loads scene at index 0 (main menu)
-        SceneManager.LoadScene(0);
+        //SAM EDIT: loads scene named MainMenu
+        SceneManager.LoadScene("MainMenu");
     }
     public void loadSettingsScene()
     {
         //Loads scene at index 1 (options)
-        SceneManager.LoadScene(1);
+        //SAM EDIT: loads scene named Options
+        SceneManager.LoadScene("Options");
     }
     public void loadTestMapScene()
     {
@@ -31,5 +33,12 @@ public class SceneLoader : MonoBehaviour {
         PauseMenu.invOpen = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(2);
+    }
+
+    //SAM EDIT: adding exit game button/method to main menu
+    public void MainQuit()
+    {
+        Debug.Log("quitting");
+        Application.Quit();
     }
 }
