@@ -104,4 +104,11 @@ public class Player : Character {
         }
 
     }
+
+    void OnCollisionEnter2D(Collision2D hitObject)
+    {
+        var hit = hitObject.gameObject;
+        var health = hit.GetComponent<EnemyCharacterStats>();
+        health.SendMessage("TakeDamage", 10);
+    }
 }
