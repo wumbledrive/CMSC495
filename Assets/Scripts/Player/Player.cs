@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CharacterStatsSpace;
 
 public class Player : Character {
 
-    
+    public static Player instance = null;
+
+    public CharacterStats Strength;
+    public CharacterStats Defense;
+    public CharacterStats Magic;
+    public CharacterStats Intelligence;
+
     public Status health;
 
     [SerializeField]
@@ -13,14 +20,17 @@ public class Player : Character {
     [SerializeField]
     private PauseMenu pause;
 
-    public CharacterStats Intelligence;
-    public CharacterStats Strength;
-    public CharacterStats Defense;
-    public CharacterStats Magic;
-
     private float maxMana = 100;
     private float maxHealth = 100;
-    internal static readonly Player MyInstance;
+
+    public void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Use this for initialization
     protected override void Start() {
@@ -103,12 +113,5 @@ public class Player : Character {
             StopAttack();
         }
 
-    }
-
-    void OnCollisionEnter2D(Collision2D hitObject)
-    {
-        var hit = hitObject.gameObject;
-        var health = hit.GetComponent<EnemyCharacterStats>();
-        health.SendMessage("TakeDamage", 10);
     }
 }

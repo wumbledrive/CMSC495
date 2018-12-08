@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8389e91277551b4aa03e246ab2480bb, type: 3}
   m_Name: Test Weapon
   m_EditorClassIdentifier: 
+  id: 47ac280f0b0dede438670dd2045273f2
   ItemName: Test Weapon
   Icon: {fileID: 21300000, guid: affb5e661ba58514780085ff22241ab4, type: 3}
-  Intelligence: 0
-  Strength: 0
-  Dexterity: 0
-  Magic: 0
+  MaximumStack: 1
+  Strength: 15
   Defense: 0
+  Magic: 10
+  Intelligence: 2
   type: 3

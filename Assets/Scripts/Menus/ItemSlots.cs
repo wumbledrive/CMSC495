@@ -9,6 +9,8 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
     //The image for the slot itself
     [SerializeField]
     private Image image;
+    [SerializeField]
+    private Text amountText;
 
     public event Action<Item> LeftClickEvent;
 
@@ -33,6 +35,19 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    private int _amount;
+    public int Amount
+    {
+        get { return _amount; }
+        set
+        {
+            _amount = value;
+            amountText.enabled = _item != null && _item.MaximumStack > 1 && _amount > 1;
+            if (amountText.enabled)
+                amountText.text = _amount.ToString();
+        }
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData != null && eventData.button == PointerEventData.InputButton.Left)
@@ -47,5 +62,8 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
     {
         if (image == null)
             image = GetComponent<Image>();
+
+        if (amountText == null)
+            amountText = GetComponentInChildren<Text>();
     }
 }

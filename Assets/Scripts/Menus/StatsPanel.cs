@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using CharacterStatsSpace;
 
 public class StatsPanel : MonoBehaviour {
 
@@ -31,7 +32,7 @@ public class StatsPanel : MonoBehaviour {
     {
         for (int i = 0; i < stats.Length; i++)
         {
-            values[i].Value.text = stats[i].Value.ToString();
+            values[i].ValueText.text = stats[i].Value.ToString();
         }
     }
 }

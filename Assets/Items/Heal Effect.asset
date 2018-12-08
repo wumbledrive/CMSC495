@@ -8,10 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2533e34f826c6d54b969f563c2be9a8e, type: 3}
-  m_Name: Health Potion
+  m_Script: {fileID: 11500000, guid: a463fd04a2a65f848a96ca3251a803b2, type: 3}
+  m_Name: Heal Effect
   m_EditorClassIdentifier: 
-  ItemName: Potion
-  Icon: {fileID: 21300058, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
-  stackSize: 0
-  health: 25
+  HealingAmount: 15

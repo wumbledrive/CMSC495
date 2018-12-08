@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
+using CharacterStatsSpace;
 
 public class InventoryMenuManager : MonoBehaviour {
 
     [SerializeField] Inventory inven;
     [SerializeField] EquipmentPanel ePanel;
+    [SerializeField] StatsPanel sPanel;
 
     private void Awake()
     {
+        sPanel.SetStats(Player.instance.Strength, Player.instance.Defense, 
+            Player.instance.Magic, Player.instance.Intelligence);
+        sPanel.UpdateValues();
+
         inven.ItemClickedEvent += HandleInv;
         ePanel.ItemClickedEvent += UnequipFromEquipPanel;
     }
@@ -16,10 +22,16 @@ public class InventoryMenuManager : MonoBehaviour {
         if (item is EquippableItem)
         {
             Equip((EquippableItem) item);
-        } else if (item is IUseable)
+        } else if (item is UsableItem)
         {
-            (item as IUseable).Use();
-            inven.RemoveItem(item);
+            UsableItem usable = (UsableItem)item;
+            usable.Use(this);
+
+            if (usable.consumable)
+            {
+                inven.RemoveItem(usable);
+                usable.Destroy();
+            }
         }
     }
 
@@ -41,7 +53,11 @@ public class InventoryMenuManager : MonoBehaviour {
                 if (previousItem != null)
                 {
                     inven.AddItem(previousItem);
+                    previousItem.Unequip(Player.instance);
+                    sPanel.UpdateValues();
                 }
+                item.Equip(Player.instance);
+                sPanel.UpdateValues();
             }
             else
             {
@@ -54,6 +70,8 @@ public class InventoryMenuManager : MonoBehaviour {
     {
         if (!inven.IsFull() && ePanel.RemoveItem(item))
         {
+            item.Unequip(Player.instance);
+            sPanel.UpdateValues();
             inven.AddItem(item);
         }
     }

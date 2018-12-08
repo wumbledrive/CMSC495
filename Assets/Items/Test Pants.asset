@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8389e91277551b4aa03e246ab2480bb, type: 3}
   m_Name: Test Pants
   m_EditorClassIdentifier: 
+  id: 84dc7158ef4829046a1283b2ff02d695
   ItemName: Test Pants
   Icon: {fileID: 21300052, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
-  Intelligence: 0
-  Strength: 0
-  Dexterity: 0
+  MaximumStack: 1
+  Strength: 2
+  Defense: 5
   Magic: 0
-  Defense: 0
+  Intelligence: 0
   type: 2

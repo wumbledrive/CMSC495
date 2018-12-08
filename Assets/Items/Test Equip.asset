@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8389e91277551b4aa03e246ab2480bb, type: 3}
   m_Name: Test Equip
   m_EditorClassIdentifier: 
+  id: 96a5a84278fdcfb43a458c907905b53e
   ItemName: Helmet Test
   Icon: {fileID: 21300000, guid: 400eaffeeeb73bc4996618cde83686ed, type: 3}
-  Intelligence: 0
-  Strength: 0
-  Dexterity: 0
-  Magic: 0
-  Defense: 0
+  MaximumStack: 1
+  Strength: 2
+  Defense: 5
+  Magic: 1
+  Intelligence: 2
   type: 0

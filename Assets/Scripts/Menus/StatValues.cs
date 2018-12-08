@@ -3,12 +3,14 @@ using UnityEngine.UI;
 
 public class StatValues : MonoBehaviour {
 
-    public Text Value;
+    public Text NameText;
+    public Text ValueText;
 
     private void OnValidate()
     {
         Text[] texts = GetComponentsInChildren<Text>();
-        Value = texts[0];
+        NameText = texts[0];
+        ValueText = texts[1];
     }
 
 }
