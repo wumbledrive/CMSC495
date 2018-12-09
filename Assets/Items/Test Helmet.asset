@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8389e91277551b4aa03e246ab2480bb, type: 3}
-  m_Name: Test Equip
+  m_Name: Test Helmet
   m_EditorClassIdentifier: 
   id: 96a5a84278fdcfb43a458c907905b53e
   ItemName: Helmet Test

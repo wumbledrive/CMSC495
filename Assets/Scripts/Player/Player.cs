@@ -7,6 +7,7 @@ public class Player : Character {
 
     public static Player instance = null;
 
+    public CharacterStats Level;
     public CharacterStats Strength;
     public CharacterStats Defense;
     public CharacterStats Magic;
@@ -20,6 +21,11 @@ public class Player : Character {
     [SerializeField]
     private PauseMenu pause;
 
+    [SerializeField]
+    private Status exp;
+
+    private float startingExp = 1;
+    private float maxExp = 100;
     private float maxMana = 100;
     private float maxHealth = 100;
 
@@ -38,6 +44,7 @@ public class Player : Character {
         //Initializes health and mana values
         health.Initialize(maxHealth, maxHealth);
         mana.Initialize(maxMana, maxMana);
+        exp.Initialize(startingExp, maxExp);
 
         pause.pauseUI.SetActive(false);
         pause.invUI.SetActive(false);
@@ -72,10 +79,12 @@ public class Player : Character {
             mana.MyCurrentValue -= 15;
         if (Input.GetKeyDown(KeyCode.L))
             mana.MyCurrentValue += 15;
-
-        /*SAM COMMENTED OUT: I think this is what was causing pause not to work on escape lol
-         if (Input.GetKeyDown(KeyCode.Escape))
-            pause.PauseGame();*/
+        if (Input.GetKeyDown(KeyCode.N))
+            exp.MyCurrentValue -= 10;
+        if (Input.GetKeyDown(KeyCode.M))
+            exp.MyCurrentValue += 10;
+        if (Input.GetKeyDown(KeyCode.J))
+            LevelUp();
 
         //Zeroes out direction
         direction = Vector2.zero;
@@ -92,6 +101,19 @@ public class Player : Character {
         //Spacebar for attack
         if (Input.GetKeyDown(KeyCode.Space))
             attackRoutine = StartCoroutine(Attack());
+    }
+
+    public void LevelUp()
+    {
+        Level.BaseValue++;
+        int ran = Random.Range(1, 5);
+        Strength.BaseValue += ran;
+        ran = Random.Range(1, 5);
+        Defense.BaseValue += ran;
+        ran = Random.Range(1, 5);
+        Magic.BaseValue += ran;
+        ran = Random.Range(1, 5);
+        Intelligence.BaseValue += ran;
     }
 
     public void TakeDamage(float damage)

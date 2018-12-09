@@ -7,12 +7,15 @@ public class InventoryMenuManager : MonoBehaviour {
     [SerializeField] EquipmentPanel ePanel;
     [SerializeField] StatsPanel sPanel;
 
+    public Player player;
+
     private void Awake()
     {
-        sPanel.SetStats(Player.instance.Strength, Player.instance.Defense, 
-            Player.instance.Magic, Player.instance.Intelligence);
-        sPanel.UpdateValues();
+        player = FindObjectOfType<Player>();
 
+        sPanel.SetStats(player.Strength, player.Defense,
+            player.Magic, player.Intelligence);
+        sPanel.UpdateValues();
         inven.ItemClickedEvent += HandleInv;
         ePanel.ItemClickedEvent += UnequipFromEquipPanel;
     }
