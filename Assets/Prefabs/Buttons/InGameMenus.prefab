@@ -2671,6 +2671,7 @@ MonoBehaviour:
   inven: {fileID: 114196996098358076}
   ePanel: {fileID: 114949232797213068}
   sPanel: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &114946087962548492
 MonoBehaviour:
   m_ObjectHideFlags: 1
