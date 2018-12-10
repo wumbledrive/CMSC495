@@ -110,17 +110,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   myAnim: {fileID: 95042934805073696}
+  Level:
+    BaseValue: 0
+  Strength:
+    BaseValue: 5
+  Defense:
+    BaseValue: 5
+  Magic:
+    BaseValue: 5
+  Intelligence:
+    BaseValue: 5
   health: {fileID: 0}
   mana: {fileID: 0}
   pause: {fileID: 0}
-  Intelligence:
-    BaseValue: 0
-  Strength:
-    BaseValue: 0
-  Defense:
-    BaseValue: 0
-  Magic:
-    BaseValue: 0
+  exp: {fileID: 0}
 --- !u!212 &212556924035004112
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1105624069
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
