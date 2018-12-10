@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-    public Player player;
+    //public Player player;
 
     public void loadNextScene()
     {
@@ -28,6 +28,8 @@ public class SceneLoader : MonoBehaviour {
     }
     public void loadTestMapScene()
     {
+
+        /*
         //Loads scene at index 2 (test map)
         //SAM EDIT: Resets in game menus and game speed
         if (Player.instance == null)
@@ -36,6 +38,7 @@ public class SceneLoader : MonoBehaviour {
         PauseMenu.gamePaused = false;
         PauseMenu.invOpen = false;
         Time.timeScale = 1f;
+        */
         SceneManager.LoadScene(2);
     }
 

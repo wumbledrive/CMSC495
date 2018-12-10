@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4550229801389854}
   - component: {fileID: 8195094282377938476}
   - component: {fileID: 3664157343388150880}
-  - component: {fileID: 68486209759627990}
+  - component: {fileID: 68783149095681714}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 4634504617487862}
   - component: {fileID: 8195094281472634404}
   - component: {fileID: 3664157345882464024}
-  - component: {fileID: 68384542252302630}
   m_Layer: 0
   m_Name: Forest 2
   m_TagString: Untagged
@@ -310,40 +309,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9253399, y: 2.2453065}
   m_EdgeRadius: 0
---- !u!68 &68384542252302630
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1939795134603000}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -30, y: 6.5}
-  - {x: 27, y: 6.5}
---- !u!68 &68486209759627990
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579902639240140}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
 --- !u!68 &68679784750223224
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -359,8 +324,30 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -29, y: 7}
-  - {x: 27, y: 7}
+  - {x: -20.592226, y: 26.913145}
+  - {x: -20.800156, y: 11.169422}
+  - {x: -20.810692, y: -10.811199}
+  - {x: 25.893715, y: -11.143093}
+--- !u!68 &68783149095681714
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579902639240140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -20.706629, y: 27.290564}
+  - {x: 24.86344, y: 26.837595}
+  - {x: 24.862062, y: 10.911709}
+  - {x: 12.760835, y: 10.9852495}
+  - {x: 12.983982, y: -8.419431}
 --- !u!212 &212827491500302010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -29760,6 +29747,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 11, y: -1, z: 0}
+    second:
+      m_TileIndex: 41
+      m_TileSpriteIndex: 41
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -28, y: 0, z: 0}
     second:
       m_TileIndex: 28
@@ -31338,6 +31334,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d814f0c270aab0247a510d06f94c5c32, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a2c1a4d4dff16894c8766331eaf16394, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 6c3c75575cac41843a066c0205634447, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 16
     m_Data: {fileID: 21300074, guid: 115dc26bd189e474da2299dd5239cd79, type: 3}
@@ -31421,8 +31419,10 @@ Tilemap:
     m_Data: {fileID: 21300254, guid: 115dc26bd189e474da2299dd5239cd79, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300256, guid: 115dc26bd189e474da2299dd5239cd79, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300032, guid: 22d0bb67168d5fa4a84a724a490dbc31, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 378
+  - m_RefCount: 379
     m_Data:
       e00: 1
       e01: 0
@@ -31441,7 +31441,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 378
+  - m_RefCount: 379
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
