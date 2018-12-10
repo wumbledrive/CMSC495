@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
     {
         int i = 0;
         //For every item, assign it to an item slot
-        for (; i < startingItems.Count && i < slots.Length; i++)
+        for (; i < startingItems.Count - 1 && i < slots.Length; i++)
         {
             slots[i].Item = startingItems[i].GetCopy();
             slots[i].Amount = 1;
