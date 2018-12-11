@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114156048011349322}
   - component: {fileID: 114865926674835566}
   m_Layer: 5
-  m_Name: Equipment slot
+  m_Name: Helmet Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
