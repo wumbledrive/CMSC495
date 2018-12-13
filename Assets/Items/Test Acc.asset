@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1a77ed9760ab5284e9e23700d3844b0a
   ItemName: Test Acc
-  Icon: {fileID: 21300112, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
+  Icon: {fileID: 21300110, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 0
   Defense: 0

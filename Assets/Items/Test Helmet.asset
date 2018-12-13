@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 96a5a84278fdcfb43a458c907905b53e
   ItemName: Helmet Test
-  Icon: {fileID: 21300000, guid: 400eaffeeeb73bc4996618cde83686ed, type: 3}
+  Icon: {fileID: 21300008, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 2
   Defense: 5
