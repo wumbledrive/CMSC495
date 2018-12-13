@@ -46,11 +46,16 @@ public class Player : Character {
 
     public void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (instance == null) 
+        { 
+        instance = this; 
+        }
         else if (instance != this)
+        {
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
+
     }
 
     // Use this for initialization
@@ -151,9 +156,9 @@ public class Player : Character {
     }
 
     public void TakeDamage(float damage)
-    //{
-    //health.MyCurrentValue -= damage;
-    //}
+    {
+    health.MyCurrentValue -= damage;
+    }
 
     //Attack timing and stopattack check
     private IEnumerator Attack(int spellIndex)

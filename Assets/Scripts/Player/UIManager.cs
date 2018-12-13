@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour {
         action1 = KeyCode.Alpha1;
         action2 = KeyCode.Alpha2;
         action3 = KeyCode.Alpha3;
-        action4 = KeyCode.Alpha4;
+        action4 = KeyCode.Space;
 
     }
 	
