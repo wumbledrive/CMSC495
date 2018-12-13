@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1e2f1d3c9315996458e87fe7a67c6218
   ItemName: Test Sheild
-  Icon: {fileID: 21300000, guid: 831916dc3341669408f7431f3d212fd1, type: 3}
+  Icon: {fileID: 21300040, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 5
   Defense: 10

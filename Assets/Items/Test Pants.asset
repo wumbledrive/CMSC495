@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 84dc7158ef4829046a1283b2ff02d695
   ItemName: Test Pants
-  Icon: {fileID: 21300052, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
+  Icon: {fileID: 21300024, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 2
   Defense: 5

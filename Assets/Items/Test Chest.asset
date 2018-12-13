@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: cc4c82002fcd72e4695524431fd98772
   ItemName: Test Chest
-  Icon: {fileID: 21300000, guid: 1dcf5b6bb04da457eb3c6daacdaee650, type: 3}
+  Icon: {fileID: 21300010, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 5
   Defense: 9
