@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Hitbox
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Block
+  - Clickable
   - 
   - 
   - 
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 3189343227
+    locked: 0
+  - name: AttackEffects
+    uniqueID: 2824546697
     locked: 0

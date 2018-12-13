@@ -2,29 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+
 //Abstract class for a character (Player, Enemy, NPC, etc.)
-public abstract class Character : MonoBehaviour {
+public abstract class Character : MonoBehaviour
+{
 
     //Speed and Direction for movement
     [SerializeField]
     private float speed;
 
+    //A reference to Rigidbody2D
     private Rigidbody2D body;
 
     //boolean for yes/no attacking
     protected bool isAttacking = false;
 
+    // The Player's direction
     protected Vector2 direction;
 
     //Coroutine variable to track animation timing attack issues
     protected Coroutine attackRoutine;
 
-    public Animator myAnim;
+    // A reference to the character's animator
+    protected Animator myAnim;
+
+    //hitbox
+    [SerializeField]
+    protected Transform hitBox;
+
+    //health
+    //[SerializeField]
+    //private Status health;
 
     // Use this for initialization
-    protected virtual void Start() {
+
+    protected virtual void Start()
+    {
+        //Makes a reference to the rigidbody2D
         body = GetComponent<Rigidbody2D>();
-	}
+
+        //Makes a reference to the character's animator
+        myAnim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     protected virtual void Update()
@@ -81,15 +103,17 @@ public abstract class Character : MonoBehaviour {
     }
 
     //Stop attack on movement
-    public void StopAttack()
+    public virtual void StopAttack()
     {
+        isAttacking = false; //Makes sure that we are not attacking
 
-        if (attackRoutine != null)
+        myAnim.SetBool("attack", isAttacking); //Stops the attack animation
+
+        if (attackRoutine != null) //Checks if we have a reference to an co routine
         {
             StopCoroutine(attackRoutine);
-            isAttacking = false;
-            myAnim.SetBool("attack", isAttacking);
         }
+
 
 
     }
