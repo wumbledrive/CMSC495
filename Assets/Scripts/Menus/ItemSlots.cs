@@ -14,6 +14,9 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
 
     public event Action<Item> LeftClickEvent;
 
+    private Color dis = new Color(0, 0, 0, 0);
+    private Color ena = Color.white;
+
     //Gets the item in the slot and sets the item
     private Item _item;
     public Item Item
@@ -26,11 +29,11 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
         {
             _item = value;
             if (_item == null)
-                image.enabled = false;
+                image.color  = dis;
             else
             {
                 image.sprite = _item.Icon;
-                image.enabled = true;
+                image.color = ena;
             }
         }
     }
