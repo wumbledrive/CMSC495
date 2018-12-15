@@ -18,6 +18,8 @@ public class SceneLoader : MonoBehaviour {
     {
         //Loads scene at index 0 (main menu)
         //SAM EDIT: loads scene named MainMenu
+        //removes UI for game settings because I need to prevent object destruction for the settings to work across scenes
+        SettingsMenu.settingsOpen = false;
         SceneManager.LoadScene("MainMenu");
     }
     public void loadSettingsScene()
@@ -25,6 +27,7 @@ public class SceneLoader : MonoBehaviour {
         //Loads scene at index 1 (options)
         //SAM EDIT: loads scene named Options
         SceneManager.LoadScene("Options");
+        SettingsMenu.settingsOpen = true;
     }
     public void loadTestMapScene()
     {

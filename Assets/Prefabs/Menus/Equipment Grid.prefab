@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114251621133611632}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 4
 --- !u!114 &114100614628339042
 MonoBehaviour:
@@ -216,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114100614628339042}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 2
 --- !u!114 &114536254053364726
 MonoBehaviour:
@@ -284,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114825866707508418}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 3
 --- !u!114 &114773571523855098
 MonoBehaviour:
@@ -375,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114539669990283052}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 1
 --- !u!114 &114928594465680066
 MonoBehaviour:
@@ -389,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114773571523855098}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 0
 --- !u!114 &114966799770059516
 MonoBehaviour:
@@ -403,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114536254053364726}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 5
 --- !u!222 &222070273259491196
 CanvasRenderer:

@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114156048011349322}
   amountText: {fileID: 0}
+  tooltip: {fileID: 0}
   type: 0
 --- !u!222 &222984141023883902
 CanvasRenderer:

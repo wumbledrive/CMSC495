@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Hitbox
+  - GameSettings
+  - GameSettingsUI
   layers:
   - Default
   - TransparentFX
