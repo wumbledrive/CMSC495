@@ -8,7 +8,7 @@ public class EnemyMoveAI : MonoBehaviour
     public int attackDelay;
     private Transform target;
     //public Collider2D attackTrigger;
-    public bool attacking=false; 
+    public bool attacking=false;
 
     void Start()
     {
@@ -57,7 +57,7 @@ public class EnemyMoveAI : MonoBehaviour
         {
             Debug.Log("Player collide");
             //Sends damage message to player
-            target.SendMessage("TakeDamage", damage);
+            target.SendMessage("TakeDamage", "physical");
             lastAttackTime = Time.time;
             transform.position = Vector2.MoveTowards(transform.position, target.position, -1);
         }

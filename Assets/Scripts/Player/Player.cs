@@ -155,9 +155,21 @@ public class Player : Character {
         Intelligence.BaseValue += ran;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(string type)
     {
-    health.MyCurrentValue -= damage;
+        if (type.Equals("physical"))
+        {
+            float damage = 0;
+            //Use the enemy's strength and player defense to calculate damage to the player
+            health.MyCurrentValue -= damage;
+        }
+
+        if (type.Equals("magical"))
+        {
+            float damage = 0;
+            //Use the enemy's magic and the player's intelligence to calculate damage to the player
+            health.MyCurrentValue -= damage;
+        }
     }
 
     //Attack timing and stopattack check

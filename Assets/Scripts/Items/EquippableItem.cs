@@ -8,7 +8,7 @@ public enum Equipment
     Pants,
     Weapon,
     Sheild,
-    Accessory,
+    Accessory
 }
 
 //CreateAssetMenu makes something createable in the Unity Asset Menu (Like creating a folder)

@@ -381,6 +381,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114209492203614672, guid: 48c9029bcf6a9674fa6ee6f5a02a3e13,
+        type: 2}
+      propertyPath: strength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209492203614672, guid: 48c9029bcf6a9674fa6ee6f5a02a3e13,
+        type: 2}
+      propertyPath: defense
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c9029bcf6a9674fa6ee6f5a02a3e13, type: 2}
   m_IsPrefabAsset: 0

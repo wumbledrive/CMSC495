@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyCharacterStats : MonoBehaviour {
     private float currentHP;
     public float maxHealth;
+    public float strength;
+    public float defense;
 
     // Use this for initialization
     void Start () {
@@ -26,9 +28,21 @@ public class EnemyCharacterStats : MonoBehaviour {
       END EXAMPLE*/
 
     //to make enemy take damage identify the enemy target and send damage as [enemy object].SendMessage("TakeDamage", damage);
-    public void TakeDamage(float damage)
+    public void TakeDamage(string type)
     {
-        currentHP -= damage;
+        if (type.Equals("physical"))
+        {
+            float damage = 0;
+            //Use the player strength and enemy's defense to calculate damage
+            currentHP -= damage;
+        }
+
+        if (type.Equals("magical"))
+        {
+            float damage = 0;
+            //Use the player magic and enemy's intelligence to calculate damage
+            currentHP -= damage;
+        }
         //Enemies who drop below 0 are removed from the game
         //Add death animation if we have one
         if (currentHP <= 0)
