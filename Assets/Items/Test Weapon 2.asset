@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Weapon 2
   m_EditorClassIdentifier: 
   id: 2f3ee4528c5ff17438c62086f1448d51
-  ItemName: Weapon 2
+  ItemName: Silver Sword
   Icon: {fileID: 21300078, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 20

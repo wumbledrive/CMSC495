@@ -4,13 +4,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 //Each item is stored in a specfic spot in the inventory UI
-public class ItemSlots : MonoBehaviour, IPointerClickHandler
+public class ItemSlots : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     //The image for the slot itself
     [SerializeField]
     private Image image;
     [SerializeField]
     private Text amountText;
+
+    [SerializeField] ItemTooltip tooltip;
 
     public event Action<Item> LeftClickEvent;
 
@@ -68,5 +70,19 @@ public class ItemSlots : MonoBehaviour, IPointerClickHandler
 
         if (amountText == null)
             amountText = GetComponentInChildren<Text>();
+
+        if (tooltip == null)
+            tooltip = FindObjectOfType<ItemTooltip>();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (Item is EquippableItem) 
+            tooltip.ShowTooltip((EquippableItem) Item);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.HideTooltip();
     }
 }

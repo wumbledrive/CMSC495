@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Sheild
   m_EditorClassIdentifier: 
   id: 1e2f1d3c9315996458e87fe7a67c6218
-  ItemName: Test Sheild
+  ItemName: Bronze Shield
   Icon: {fileID: 21300040, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 5

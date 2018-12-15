@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Chest
   m_EditorClassIdentifier: 
   id: cc4c82002fcd72e4695524431fd98772
-  ItemName: Test Chest
+  ItemName: Bronze Chestpiece
   Icon: {fileID: 21300010, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 5

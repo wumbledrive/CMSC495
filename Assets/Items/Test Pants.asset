@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Pants
   m_EditorClassIdentifier: 
   id: 84dc7158ef4829046a1283b2ff02d695
-  ItemName: Test Pants
+  ItemName: Leather Leggings
   Icon: {fileID: 21300024, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 2

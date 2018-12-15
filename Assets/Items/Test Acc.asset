@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Acc
   m_EditorClassIdentifier: 
   id: 1a77ed9760ab5284e9e23700d3844b0a
-  ItemName: Test Acc
+  ItemName: Ring of Magic
   Icon: {fileID: 21300110, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Test Helmet
   m_EditorClassIdentifier: 
   id: 96a5a84278fdcfb43a458c907905b53e
-  ItemName: Helmet Test
+  ItemName: Bronze Helmet
   Icon: {fileID: 21300008, guid: e404558f156a28149aec161bf060e298, type: 3}
   MaximumStack: 1
   Strength: 2
