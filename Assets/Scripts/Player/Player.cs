@@ -137,8 +137,10 @@ public class Player : Character {
                 direction += Vector2.right;
             }
 
-        //Spacebar for sword attack re-adding later
-        //if (Input.GetKeyDown(KeyCode.Space)){}
+        if (Input.GetKeyDown(KeyCode.Space))
+            {
+                
+            }
 
     }
 
