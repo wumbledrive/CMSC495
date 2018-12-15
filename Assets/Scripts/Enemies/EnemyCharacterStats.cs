@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyCharacterStats : MonoBehaviour {
     private float currentHP;
     public float maxHealth;
-    public float strength;
     public float defense;
+    public float intelligence;
 
     // Use this for initialization
     void Start () {
@@ -21,26 +21,35 @@ public class EnemyCharacterStats : MonoBehaviour {
         var hit = hitObject.gameObject;
    //calls this script so the damage gets sent to the right place
         var health = hit.GetComponent<EnemyCharacterStats>();
-   //sends 10 damage to colliding unit
-        health.SendMessage("TakeDamage", 10);
+   //sends 10 physical damage to colliding unit
+        health.SendMessage("PhysicalDamage", 10);
     }
          
       END EXAMPLE*/
 
     //to make enemy take damage identify the enemy target and send damage as [enemy object].SendMessage("TakeDamage", damage);
-    public void TakeDamage(string type)
+    public void PhysicalDamage(float incDmg)
     {
-        if (type.Equals("physical"))
-        {
-            float damage = 0;
+            float damage = incDmg-defense;
             //Use the player strength and enemy's defense to calculate damage
-            currentHP -= damage;
-        }
-
-        if (type.Equals("magical"))
+            if (damage > 0)
+            {
+                currentHP -= damage;
+            }
+        //Enemies who drop below 0 are removed from the game
+        //Add death animation if we have one
+        if (currentHP <= 0)
         {
-            float damage = 0;
-            //Use the player magic and enemy's intelligence to calculate damage
+            Destroy(gameObject);
+        }
+    }
+
+    public void MagicalDamage(float incDmg)
+    {
+        float damage = incDmg - intelligence;
+        //Use the player strength and enemy's defense to calculate damage
+        if (damage > 0)
+        {
             currentHP -= damage;
         }
         //Enemies who drop below 0 are removed from the game
@@ -50,4 +59,5 @@ public class EnemyCharacterStats : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
 }

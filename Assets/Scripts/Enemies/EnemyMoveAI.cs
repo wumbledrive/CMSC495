@@ -57,9 +57,10 @@ public class EnemyMoveAI : MonoBehaviour
         {
             Debug.Log("Player collide");
             //Sends damage message to player
-            target.SendMessage("TakeDamage", "physical");
+            target.SendMessage("PhysicalDamage", damage);
             lastAttackTime = Time.time;
             transform.position = Vector2.MoveTowards(transform.position, target.position, -1);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, 1*Time.deltaTime);
         }
     }
 }

@@ -62,7 +62,8 @@ namespace CharacterStatsSpace
             return removed;
         }
 
-        private float FinalValue()
+        //SAMS EDIT: making FinalValue public so I can call the players stats for damage calculations
+        public float FinalValue()
         {
             float finalValue = BaseValue;
 

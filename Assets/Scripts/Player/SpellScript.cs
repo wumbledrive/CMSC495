@@ -7,6 +7,7 @@ public class SpellScript : MonoBehaviour
 
     // A reference to the spell's rigid body
     private Rigidbody2D myRigidBody;
+    private float damageDealt;
 
     // The spell's movement speed
     [SerializeField]
@@ -46,9 +47,19 @@ public class SpellScript : MonoBehaviour
     {
         if (collision.tag == "Hitbox" && collision.transform == MyTarget)
         {
+            //calls this script so the damage gets sent to the right place
+            var health = MyTarget.GetComponent<EnemyCharacterStats>();
+            //sends magic damage to colliding unit
+            health.SendMessage("MagicalDamage", damageDealt);
             GetComponent<Animator>().SetTrigger("impact");
             myRigidBody.velocity = Vector2.zero;
             MyTarget = null;
         }
+    }
+
+    //SAMS EDIT: adding magic modifier to spell script
+    private void MagicInput(float dmgMod)
+    {
+        damageDealt = dmgMod;
     }
 }

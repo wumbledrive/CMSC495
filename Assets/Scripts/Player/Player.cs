@@ -155,21 +155,20 @@ public class Player : Character {
         Intelligence.BaseValue += ran;
     }
 
-    public void TakeDamage(string type)
+    //takes physical damage
+    public void PhysicalDamage(float incDmg)
     {
-        if (type.Equals("physical"))
-        {
-            float damage = 0;
+            float damage = incDmg-Defense.FinalValue();
             //Use the enemy's strength and player defense to calculate damage to the player
             health.MyCurrentValue -= damage;
-        }
+    }
 
-        if (type.Equals("magical"))
-        {
-            float damage = 0;
-            //Use the enemy's magic and the player's intelligence to calculate damage to the player
-            health.MyCurrentValue -= damage;
-        }
+    //takes magic damage
+    public void MagicalDamage(float incDmg)
+    {
+        float damage = incDmg -Intelligence.FinalValue();
+        //Use the enemy's strength and player defense to calculate damage to the player
+        health.MyCurrentValue -= damage;
     }
 
     //Attack timing and stopattack check
@@ -188,8 +187,11 @@ public class Player : Character {
 
         if (currentTarget != null && InLineOfSight())
         {
+
             SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
             s.MyTarget = currentTarget;
+            //SAMS EDIT: added Magic level adjustment
+            s.SendMessage("MagicInput", Magic.FinalValue());
         }
 
         StopAttack(); //Ends the attack
