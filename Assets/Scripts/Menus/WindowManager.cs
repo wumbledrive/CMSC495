@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class WindowManager : MonoBehaviour {
 
-    #region Attributes
-    #region Player Pref Key Constants
 
-    private const string RESOLUTION_PREF_KEY = "resolution";
     #region Resolution
+    private const string RESOLUTION_PREF_KEY = "resolution";
     [SerializeField]
     private Text resolutionText;
     private Resolution[] resolutions;
@@ -25,7 +23,7 @@ public class WindowManager : MonoBehaviour {
 	void Update () {
 		
 	}
-    #region Helpers
+    
     #region Resolution Cycling
     private void SetResolutionText(Resolution resolution)
     {
@@ -55,6 +53,6 @@ public class WindowManager : MonoBehaviour {
         return (currentIndex - 1) % collection.Count;
     }
     #endregion
-    #endregion
+    
 
 }
