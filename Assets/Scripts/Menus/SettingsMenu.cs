@@ -8,10 +8,14 @@ public class SettingsMenu : MonoBehaviour{
     public AudioMixer settingsMixer;
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
+    public GameObject settingMenuUI;
+    public static bool settingsOpen = false;
 
     void Start()
     {
+        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameSettings"));
         resolutions = Screen.resolutions;
+        SetQuality(3);
 
         resolutionDropdown.ClearOptions();
         List<string> resOptions = new List<string>();
@@ -33,6 +37,11 @@ public class SettingsMenu : MonoBehaviour{
         resolutionDropdown.RefreshShownValue();
     }
 
+    void Update()
+    {
+        IsVisible(settingsOpen);
+    }
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -41,17 +50,24 @@ public class SettingsMenu : MonoBehaviour{
 
     public void SetVolume(float Volume)
     {
+        Debug.Log("volume set to: " + Volume);
         settingsMixer.SetFloat("volume", Volume);
     }
 
     public void SetQuality(int qualityScore)
     {
+        Debug.Log("quality set to: " + qualityScore);
         QualitySettings.SetQualityLevel(qualityScore);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void IsVisible(bool visible)
+    {
+        settingMenuUI.SetActive(visible);
     }
 
 }

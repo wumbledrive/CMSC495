@@ -155,6 +155,58 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f9e6bd6a07d624c9141001f24d7fb6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &295836717
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.201901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.35793412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501070750452980, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799885122119530, guid: 740068c6c19fc43c586a7b20fa6ab78f,
+        type: 2}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 295836718}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!60 &295836718 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 60316948332226482, guid: 740068c6c19fc43c586a7b20fa6ab78f,
+    type: 2}
+  m_PrefabInternal: {fileID: 295836717}
 --- !u!1 &1822211503
 GameObject:
   m_ObjectHideFlags: 0

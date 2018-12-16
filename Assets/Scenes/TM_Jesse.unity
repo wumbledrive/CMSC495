@@ -2363,6 +2363,16 @@ Prefab:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 523555258}
+    - target: {fileID: 114799885122119530, guid: 740068c6c19fc43c586a7b20fa6ab78f,
+        type: 2}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 2128375803}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 740068c6c19fc43c586a7b20fa6ab78f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!60 &2128375803 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 60316948332226482, guid: 740068c6c19fc43c586a7b20fa6ab78f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2128375802}

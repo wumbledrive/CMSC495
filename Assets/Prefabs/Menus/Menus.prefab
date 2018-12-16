@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114344300826510830}
   amountText: {fileID: 114412339674232380}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114090372844399298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114460933695702144}
   amountText: {fileID: 114893986318328572}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114113675974617968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2254,7 +2254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114559191625407280}
   amountText: {fileID: 114205108345056140}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114141716755838512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2361,7 +2361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114762558439041046}
   amountText: {fileID: 114545785113468534}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114200092067554810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2487,7 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114311100357518402}
   amountText: {fileID: 114006287828943390}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114225194148367580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2635,7 +2635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114395608586168876}
   amountText: {fileID: 114128608429669462}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114281081721241670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2676,7 +2676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114281081721241670}
   amountText: {fileID: 114675497304443990}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114282975719083194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2690,7 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114444952913226216}
   amountText: {fileID: 114225194148367580}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114284323419081122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114804621101173920}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 5
 --- !u!114 &114311100357518402
 MonoBehaviour:
@@ -2918,7 +2918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114905322981349912}
   amountText: {fileID: 114645620207712686}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114344300826510830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114076580775028950}
   amountText: {fileID: 114981564135476784}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114391524802346116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114255440998590902}
   amountText: {fileID: 114135245847465392}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114416331059265850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3232,7 +3232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114735728119618504}
   amountText: {fileID: 114920142843963096}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114417790928939804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3471,7 +3471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114354870785857272}
   amountText: {fileID: 114060326716866820}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114493443472127394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3644,7 +3644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114285185370412294}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 4
 --- !u!114 &114516717610007796
 MonoBehaviour:
@@ -4030,7 +4030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114928364919374108}
   amountText: {fileID: 114709325675823552}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114615756821644414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4172,7 +4172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114321037893168052}
   amountText: {fileID: 114797421428421676}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114656645417874508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4186,7 +4186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114496269849355760}
   amountText: {fileID: 114509523137242208}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114659469855705386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4227,7 +4227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114538215793408048}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 1
 --- !u!114 &114662722787058114
 MonoBehaviour:
@@ -4580,7 +4580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114621184705951682}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 3
 --- !u!114 &114709325675823552
 MonoBehaviour:
@@ -4678,7 +4678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114495669616835834}
   amountText: {fileID: 114984822605338030}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114735728119618504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4752,7 +4752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114213631176641970}
   amountText: {fileID: 114905608970446346}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114760246121900798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114015372387136448}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 0
 --- !u!114 &114779418183629602
 MonoBehaviour:
@@ -4882,7 +4882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114688127714020402}
   amountText: {fileID: 114848694213706856}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114783177089526454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4896,7 +4896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114659469855705386}
   amountText: {fileID: 114516717610007796}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114783942788941502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4910,7 +4910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114524088484846278}
   amountText: {fileID: 114003511832892140}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114786920837584720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4957,7 +4957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114117025881410962}
   amountText: {fileID: 114591649972095128}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114796180701436576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114247849262187362}
   amountText: {fileID: 114377427269138462}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114804621101173920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5078,7 +5078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114131326862791090}
   amountText: {fileID: 114777467381241056}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114814605103785684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5194,7 +5194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114431202205092390}
   amountText: {fileID: 114664574228511852}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114893986318328572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114284323419081122}
   amountText: {fileID: 114738294371595468}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114946256502534516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5479,7 +5479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114394540368739328}
   amountText: {fileID: 114232951966522800}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
 --- !u!114 &114970260838330020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5592,7 +5592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114141716755838512}
   amountText: {fileID: 0}
-  tooltip: {fileID: 114253160375811238}
+  tooltip: {fileID: 0}
   type: 2
 --- !u!222 &222004798547408500
 CanvasRenderer:
