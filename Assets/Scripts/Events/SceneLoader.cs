@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-    //public Player player;
+    public int winCondition = 0;
 
     public void loadNextScene()
     {
@@ -29,7 +29,7 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("Options");
         SettingsMenu.settingsOpen = true;
     }
-    public void loadTestMapScene()
+    public void loadVillageScene()
     {
 
         /*
@@ -37,12 +37,12 @@ public class SceneLoader : MonoBehaviour {
         //SAM EDIT: Resets in game menus and game speed
         if (Player.instance == null)
             Instantiate(player);
+        */
         PauseMenu.gameOver = false;
         PauseMenu.gamePaused = false;
         PauseMenu.invOpen = false;
         Time.timeScale = 1f;
-        */
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Village");
     }
 
     //SAM EDIT: adding exit game button/method to main menu
