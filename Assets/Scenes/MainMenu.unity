@@ -191,7 +191,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 401982948}
-        m_MethodName: loadTestMapScene
+        m_MethodName: loadVillageScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

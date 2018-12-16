@@ -13,6 +13,8 @@ public class Player : Character {
     public CharacterStats Magic;
     public CharacterStats Intelligence;
 
+    public int KillCount = 0;
+
     // The player's health
     public Status health;
 
@@ -87,6 +89,12 @@ public class Player : Character {
             PauseMenu.gameOver = true;
             health.MyCurrentValue = maxHealth;
             mana.MyCurrentValue = maxMana;
+        }
+
+        if (KillCount >= 4)
+        {
+            SceneLoader loader = new SceneLoader();
+            loader.loadWinScreen();
         }
     }
 
