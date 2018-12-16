@@ -5,19 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
-    public static bool gamePaused = false;
-    public static bool invOpen = false;
-    public static bool gameOver = false;
+    public static bool gamePaused;
+    public static bool invOpen;
+    public static bool gameOver;
 
     public GameObject pauseUI, gameOverUI, invUI;
 	
+    public void Awake() {
+        gamePaused = false;
+        invOpen = false;
+        gameOver = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gamePaused)
             {
-                Debug.Log("oof");
                 ResumeGame();
             }else{
                 PauseGame();

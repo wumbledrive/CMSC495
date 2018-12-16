@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyCharacterStats : MonoBehaviour {
     private float currentHP;
@@ -40,6 +41,8 @@ public class EnemyCharacterStats : MonoBehaviour {
         //Add death animation if we have one
         if (currentHP <= 0)
         {
+            Player player = Player.instance;
+            player.KillCount++;
             Destroy(gameObject);
         }
     }
@@ -56,8 +59,9 @@ public class EnemyCharacterStats : MonoBehaviour {
         //Add death animation if we have one
         if (currentHP <= 0)
         {
+            Player player = Player.instance;
+            player.KillCount++;
             Destroy(gameObject);
         }
     }
-
 }

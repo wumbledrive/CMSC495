@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-    public int winCondition = 0;
-
     public void loadNextScene()
     {
         //Set current scene using Unity's scene loader
@@ -22,6 +20,7 @@ public class SceneLoader : MonoBehaviour {
         SettingsMenu.settingsOpen = false;
         SceneManager.LoadScene("MainMenu");
     }
+
     public void loadSettingsScene()
     {
         //Loads scene at index 1 (options)
@@ -29,6 +28,7 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("Options");
         SettingsMenu.settingsOpen = true;
     }
+
     public void loadVillageScene()
     {
 
@@ -43,6 +43,11 @@ public class SceneLoader : MonoBehaviour {
         PauseMenu.invOpen = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Village");
+    }
+
+    public void loadWinScreen()
+    {
+        SceneManager.LoadScene("Win Screen");
     }
 
     //SAM EDIT: adding exit game button/method to main menu
