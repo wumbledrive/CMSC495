@@ -507,8 +507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222883519694f1248bbca27a2c17c00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
+  direction: {x: 0, y: 0}
   hitBox: {fileID: 0}
+  health: {fileID: 0}
+  initHealth: 100
   Level:
     BaseValue: 0
   Strength:
@@ -519,7 +522,7 @@ MonoBehaviour:
     BaseValue: 5
   Intelligence:
     BaseValue: 5
-  health: {fileID: 0}
+  KillCount: 0
   mana: {fileID: 0}
   pause: {fileID: 0}
   exp: {fileID: 0}
@@ -758,7 +761,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1105624069
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_Sprite: {fileID: 21300000, guid: 2b2b308d73fa1274f8dbe093cfd79b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

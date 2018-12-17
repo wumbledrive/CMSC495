@@ -2,45 +2,114 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// This is an abstract class that all characters needs to inherit from
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-
-//Abstract class for a character (Player, Enemy, NPC, etc.)
 public abstract class Character : MonoBehaviour
 {
 
-    //Speed and Direction for movement
+
+    /// <summary>
+    /// The Player's movement speed
+    /// </summary>
     [SerializeField]
     private float speed;
 
-    //A reference to Rigidbody2D
+    /// <summary>
+    /// A reference to the character's animator
+    /// </summary>
+    public Animator myAnim { get; set; }
+
+    /// <summary>
+    /// The Player's direction
+    /// </summary>
+    public Vector2 direction;
+
+    /// <summary>
+    /// The Character's rigidbody
+    /// </summary>
     private Rigidbody2D body;
 
-    //boolean for yes/no attacking
-    protected bool isAttacking = false;
+    /// <summary>
+    /// indicates if the character is attacking or not
+    /// </summary>
+    public bool isAttacking { get; set; }
 
-    // The Player's direction
-    protected Vector2 direction;
-
-    //Coroutine variable to track animation timing attack issues
+    /// <summary>
+    /// A reference to the attack coroutine
+    /// </summary>
     protected Coroutine attackRoutine;
 
-    // A reference to the character's animator
-    protected Animator myAnim;
-
-    //hitbox
     [SerializeField]
     protected Transform hitBox;
 
-    //health
-    //[SerializeField]
-    //private Status health;
+    [SerializeField]
+    public Status health;
 
-    // Use this for initialization
+    public Transform MyTarget { get; set; }
+
+    public Status MyHealth
+    {
+        get { return health; }
+    }
+
+    /// <summary>
+    /// The character's initialHealth
+    /// </summary>
+    [SerializeField]
+    private float initHealth;
+
+    /// <summary>
+    /// Indicates if character is moving or not
+    /// </summary>
+    public bool IsMoving
+    {
+        get
+        {
+            return Direction.x != 0 || Direction.y != 0;
+        }
+    }
+
+    public Vector2 Direction
+    {
+        get
+        {
+            return direction;
+        }
+
+        set
+        {
+            direction = value;
+        }
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+        }
+    }
+
+    public bool IsAlive
+    {
+        get
+        {
+            return health.MyCurrentValue > 0;
+        }
+    }
 
     protected virtual void Start()
     {
+        health.Initialize(initHealth, initHealth);
+
         //Makes a reference to the rigidbody2D
         body = GetComponent<Rigidbody2D>();
 
@@ -48,50 +117,68 @@ public abstract class Character : MonoBehaviour
         myAnim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is marked as virtual, so that we can override it in the subclasses
+    /// </summary>
     protected virtual void Update()
     {
-
         HandleLayers();
     }
 
     private void FixedUpdate()
     {
-        //Calls the Move function
         Move();
     }
 
+    /// <summary>
+    /// Moves the player
+    /// </summary>
     public void Move()
     {
-        //Moves character based on speed and direction
-        body.velocity = direction.normalized * speed;
-
+        if (IsAlive)
+        {
+            //Makes sure that the player moves
+            body.velocity = Direction.normalized * Speed;
+        }
 
     }
 
+    /// <summary>
+    /// Makes sure that the right animation layer is playing
+    /// </summary>
     public void HandleLayers()
     {
-        body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
-
-        myAnim.SetFloat("moveX", body.velocity.x);
-        myAnim.SetFloat("moveY", body.velocity.y);
-
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (IsAlive)
         {
+            //Checks if we are moving or standing still, if we are moving then we need to play the move animation
+            if (IsMoving)
+            {
+                ActivateLayer("WalkLayer");
 
-            myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-
-            StopAttack();
+                //Sets the animation parameter so that he faces the correct direction
+                myAnim.SetFloat("x", Direction.x);
+                myAnim.SetFloat("y", Direction.y);
+            }
+            else if (isAttacking)
+            {
+                ActivateLayer("AttackLayer");
+            }
+            else
+            {
+                //Makes sure that we will go back to idle when we aren't pressing any keys.
+                ActivateLayer("IdleLayer");
+            }
         }
-
-        if (isAttacking)
+        else
         {
-            ActivateLayer("AttackLayer");
+            ActivateLayer("DeathLayer");
         }
 
     }
 
+    /// <summary>
+    /// Activates an animation layer based on a string
+    /// </summary>
     public void ActivateLayer(string layerName)
     {
         for (int i = 0; i < myAnim.layerCount; i++)
@@ -102,20 +189,22 @@ public abstract class Character : MonoBehaviour
         myAnim.SetLayerWeight(myAnim.GetLayerIndex(layerName), 1);
     }
 
-    //Stop attack on movement
-    public virtual void StopAttack()
+    /// <summary>
+    /// Makes the character take damage
+    /// </summary>
+    /// <param name="damage"></param>
+    public virtual void TakeDamage(float damage, Transform source)
     {
-        isAttacking = false; //Makes sure that we are not attacking
+        health.MyCurrentValue -= damage;
 
-        myAnim.SetBool("attack", isAttacking); //Stops the attack animation
-
-        if (attackRoutine != null) //Checks if we have a reference to an co routine
+        if (health.MyCurrentValue <= 0)
         {
-            StopCoroutine(attackRoutine);
+            //Makes sure that the character stops moving when its dead
+            direction = Vector2.zero;
+            body.velocity = direction;
+            myAnim.SetTrigger("die");
         }
-
-
-
     }
+
 }
 

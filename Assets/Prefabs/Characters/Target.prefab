@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 61185561756961866}
   - component: {fileID: 95942694612469252}
   - component: {fileID: 50700257810394494}
-  - component: {fileID: 114283580873210582}
+  - component: {fileID: 114539203666615386}
   m_Layer: 9
   m_Name: Target
   m_TagString: Enemy
@@ -76,8 +76,9 @@ GameObject:
   - component: {fileID: 224879869092217634}
   - component: {fileID: 222082980824876902}
   - component: {fileID: 114720325620392346}
+  - component: {fileID: 114403431838413526}
   m_Layer: 9
-  m_Name: Fill
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +101,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1997958558698082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4574152876507268}
+  - component: {fileID: 58309697975445448}
+  - component: {fileID: 114465059610118146}
+  m_Layer: 9
+  m_Name: Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4013284007474194
 Transform:
   m_ObjectHideFlags: 1
@@ -113,6 +131,19 @@ Transform:
   m_Father: {fileID: 4781447753303970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4574152876507268
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997958558698082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4781447753303970}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4781447753303970
 Transform:
   m_ObjectHideFlags: 1
@@ -125,6 +156,7 @@ Transform:
   m_Children:
   - {fileID: 4013284007474194}
   - {fileID: 224196349471021770}
+  - {fileID: 4574152876507268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,6 +180,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58309697975445448
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997958558698082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.9
 --- !u!61 &61109266211409686
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -171,7 +218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.1}
+  m_Size: {x: 0.002, y: 0.002}
   m_EdgeRadius: 0
 --- !u!61 &61185561756961866
 BoxCollider2D:
@@ -189,14 +236,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
+    oldSize: {x: 0.13333334, y: 0.26666668}
     newSize: {x: 0.16, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.32}
+  m_Size: {x: 0.1, y: 0.3}
   m_EdgeRadius: 0
 --- !u!95 &95942694612469252
 Animator:
@@ -243,7 +290,31 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114283580873210582
+--- !u!114 &114403431838413526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439899097002880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6f4174580a0c44e8f8d0eed09933b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statValue: {fileID: 0}
+  lerpSpeed: 0
+--- !u!114 &114465059610118146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997958558698082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393f1782ddbd841649952e6b2637f4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114539203666615386
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,9 +325,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bd298ded0d44f739a42f53e333bced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.3
+  direction: {x: 0, y: 0}
   hitBox: {fileID: 4013284007474194}
+  health: {fileID: 114403431838413526}
+  initHealth: 25
+  portrait: {fileID: 21300000, guid: efe09f3a945dc43d589d1f84bfdcd2ff, type: 3}
   healthGroup: {fileID: 225388047754011834}
+  initAggroRange: 3
 --- !u!114 &114664495090686636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6156863, g: 0.6313726, b: 0.6901961, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -298,10 +374,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: f121e124870a37949a76199fa2bae2e6, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -353,10 +429,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300008, guid: 59061411f0bb73444a935b398114e614, type: 3}
+  m_SortingLayerID: -1105624069
+  m_SortingLayer: 3
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 555dd9564d80e4a628594eb7be3969a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -398,7 +474,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1451919847
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &224196349471021770
@@ -464,7 +540,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028675413454994}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

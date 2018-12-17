@@ -8,6 +8,9 @@ public class Status : MonoBehaviour {
     private Image content;
 
     [SerializeField]
+    private Text statValue;
+
+    [SerializeField]
     private float lerpSpeed;
 
     private float currentFill;
@@ -21,26 +24,39 @@ public class Status : MonoBehaviour {
     {
         get
         {
+
             return currentValue;
         }
+
         set
         {
-            //Health and mana cannot go above the max
-            if (value > MyMaxValue)
+            if (value > MyMaxValue)//Makes sure that we don't get too much health
+            {
                 currentValue = MyMaxValue;
-            //Health and mana cannot go below 0
-            else if (value < 0)
+            }
+            else if (value < 0) //Makes sure that we don't get health below 0
+            {
                 currentValue = 0;
-            //Sets the current health and mana value
-            else
+            }
+            else //Makes sure that we set the current value withing the bounds of 0 to max health
+            {
                 currentValue = value;
+            }
 
+            //Calculates the currentFill, so that we can lerp
             currentFill = currentValue / MyMaxValue;
+
+            if (statValue != null)
+            {
+                //Makes sure that we update the value text
+                statValue.text = currentValue + " / " + MyMaxValue;
+            }
+
         }
     }
 
-	// Use this for initialization
-	void Start() {
+    // Use this for initialization
+    void Start() {
         content = GetComponent<Image>();
 	}
 	
@@ -54,7 +70,13 @@ public class Status : MonoBehaviour {
     //Initializes current status using given amounts
     public void Initialize(float currentValue, float maxValue)
     {
+        if (content == null)
+        {
+            content = GetComponent<Image>();
+        }
+
         MyMaxValue = maxValue;
         MyCurrentValue = currentValue;
+        content.fillAmount = MyCurrentValue / MyMaxValue;
     }
 }

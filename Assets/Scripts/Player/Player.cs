@@ -1,9 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CharacterStatsSpace;
 
-public class Player : Character {
+
+//functionality that is specific to the Player
+public class Player : Character
+{
 
     public static Player instance = null;
 
@@ -14,9 +17,6 @@ public class Player : Character {
     public CharacterStats Intelligence;
 
     public int KillCount = 0;
-
-    // The player's health
-    public Status health;
 
     // The player's mana
     [SerializeField]
@@ -33,24 +33,27 @@ public class Player : Character {
     private float maxMana = 100;
     private float maxHealth = 100;
 
+    //initial mana
+    private float initMana = 50;
+
+    //Blocking so player can't shoot spells behind
     [SerializeField]
     private Block[] blocks;
 
+    // Exit points for the spells and sword attack
     [SerializeField]
     private Transform[] exitPoints;
+
+    //Index that keeps track of which exit point to use, 2 is default down
     private int exitIndex = 2;
 
-
     private SpellBook spellBook;
-    //Choosing targets
-
-    public Transform MyTarget { get; set; }
 
     public void Awake()
     {
-        if (instance == null) 
-        { 
-        instance = this; 
+        if (instance == null)
+        {
+            instance = this;
         }
         else if (instance != this)
         {
@@ -60,14 +63,16 @@ public class Player : Character {
 
     }
 
-    // Use this for initialization
-    protected override void Start() {
-
-        //Initializes SpellBook
+    protected override void Start()
+    {
         spellBook = GetComponent<SpellBook>();
+
+        mana.Initialize(initMana, initMana);
+
         //Initializes health and mana values
-        health.Initialize(maxHealth, maxHealth);
-        mana.Initialize(maxMana, maxMana);
+        //health.Initialize(maxHealth, maxHealth);
+        //mana.Initialize(maxMana, maxMana);
+        //mana.Initialize(initMana, initMana);
         exp.Initialize(startingExp, maxExp);
 
         pause.pauseUI.SetActive(false);
@@ -76,9 +81,11 @@ public class Player : Character {
 
         base.Start();
     }
-    
-    // Update is called once per frame
-    protected override void Update() {
+
+
+    //Update is called once per frame
+    protected override void Update()
+    {
         //Calls the GetInput function then the Move function from character
         GetInput();
 
@@ -98,11 +105,15 @@ public class Player : Character {
         }
     }
 
-    //Gets the current direction based on user input
+    /// <summary>
+    /// Listen's to the players input
+    /// </summary>
     private void GetInput()
     {
+        direction = Vector2.zero;
+
         //Used for debugging Health and Mana values
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
             health.MyCurrentValue -= 10;
         if (Input.GetKeyDown(KeyCode.O))
             health.MyCurrentValue += 10;
@@ -117,38 +128,31 @@ public class Player : Character {
         if (Input.GetKeyDown(KeyCode.J))
             LevelUp();
 
-        //Zeroes out direction
-        direction = Vector2.zero;
-
-        //Finds new direction
-        if (Input.GetKey(KeyCode.W)) 
-            {
-                exitIndex = 0;
-                direction += Vector2.up;
-            }
-
-        if (Input.GetKey(KeyCode.A))
-            {
-                exitIndex = 3;
-                direction += Vector2.left;
-            }
-
+        if (Input.GetKey(KeyCode.W)) //Moves up
+        {
+            exitIndex = 0;
+            direction += Vector2.up;
+        }
+        if (Input.GetKey(KeyCode.A)) //Moves left
+        {
+            exitIndex = 3;
+            direction += Vector2.left; //Moves down
+        }
         if (Input.GetKey(KeyCode.S))
-            {
-                exitIndex = 2;
-                direction += Vector2.down;
-            }
+        {
+            exitIndex = 2;
+            direction += Vector2.down;
+        }
+        if (Input.GetKey(KeyCode.D)) //Moves right
+        {
+            exitIndex = 1;
+            direction += Vector2.right;
+        }
+        if (IsMoving)
+        {
+            StopAttack();
+        }
 
-        if (Input.GetKey(KeyCode.D))
-            {
-                exitIndex = 1;
-                direction += Vector2.right;
-            }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            {
-                
-            }
 
     }
 
@@ -166,20 +170,21 @@ public class Player : Character {
     }
 
     //takes physical damage
-    public void PhysicalDamage(float incDmg)
-    {
-            float damage = incDmg-Defense.FinalValue();
-            //Use the enemy's strength and player defense to calculate damage to the player
-            health.MyCurrentValue -= damage;
-    }
+    //public void PhysicalDamage(float incDmg)
+    //{
+    //float damage = incDmg - Defense.FinalValue();
+    //Use the enemy's strength and player defense to calculate damage to the player
+    //health.MyCurrentValue -= damage;
+    //}
 
     //takes magic damage
-    public void MagicalDamage(float incDmg)
-    {
-        float damage = incDmg -Intelligence.FinalValue();
-        //Use the enemy's strength and player defense to calculate damage to the player
-        health.MyCurrentValue -= damage;
-    }
+    //public void MagicalDamage(float incDmg)
+    //{
+    //float damage = incDmg - Intelligence.FinalValue();
+    //Use the enemy's strength and player defense to calculate damage to the player 
+    //health.MyCurrentValue -= damage;
+    //}
+
 
     //Attack timing and stopattack check
     private IEnumerator Attack(int spellIndex)
@@ -197,11 +202,11 @@ public class Player : Character {
 
         if (currentTarget != null && InLineOfSight())
         {
-
             SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
-            s.MyTarget = currentTarget;
+
+            s.Initialize(currentTarget, newSpell.MyDamage, transform);
             //SAMS EDIT: added Magic level adjustment
-            s.SendMessage("MagicInput", Magic.FinalValue());
+            //s.SendMessage("MagicInput", Magic.FinalValue());
         }
 
         StopAttack(); //Ends the attack
@@ -212,15 +217,17 @@ public class Player : Character {
     {
         Block();
 
-        if (MyTarget != null && !isAttacking && InLineOfSight() && !(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1))
+        if (MyTarget != null && MyTarget.GetComponentInParent<Character>().IsAlive && !isAttacking && !IsMoving && InLineOfSight()) //Chcks if we are able to attack
         {
             attackRoutine = StartCoroutine(Attack(spellIndex));
         }
-        
     }
 
-    // Checks if the target is in line of sight
-    private bool InLineOfSight() 
+    /// <summary>
+    /// Checks if the target is in line of sight
+    /// </summary>
+    /// <returns></returns>
+    private bool InLineOfSight()
     {
         if (MyTarget != null)
         {
@@ -235,13 +242,15 @@ public class Player : Character {
             {
                 return true;
             }
+
         }
 
         //If we hit the block we can't cast a spell
-        return false; 
+        return false;
     }
 
-    private void Block() 
+    // Changes the blocks based on the players direction
+    private void Block()
     {
         foreach (Block b in blocks)
         {
@@ -251,13 +260,19 @@ public class Player : Character {
         blocks[exitIndex].Activate();
     }
 
-    // Makes the player stop attacking
-    public override void StopAttack()
+    // Stops the attack
+    public void StopAttack()
     {
         //Stop the spellbook from casting
         spellBook.StopCating();
 
-        //Makes sure that we stop the cast in our character.
-        base.StopAttack();
+        isAttacking = false; //Makes sure that we are not attacking
+
+        myAnim.SetBool("attack", isAttacking); //Stops the attack animation
+
+        if (attackRoutine != null) //Checks if we have a reference to an co routine
+        {
+            StopCoroutine(attackRoutine);
+        }
     }
 }

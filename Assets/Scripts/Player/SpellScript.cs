@@ -14,13 +14,24 @@ public class SpellScript : MonoBehaviour
     private float speed;
 
     // The spells target
-    public Transform MyTarget { get; set; }
+    public Transform MyTarget { get; private set; }
+
+    private Transform source;
+
+    private int damage;
 
     // Use this for initialization
     void Start()
     {
         //Creates a reference to the spell's rigidbody
         myRigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    public void Initialize(Transform target, int damage, Transform source)
+    {
+        this.MyTarget = target;
+        this.damage = damage;
+        this.source = source;
     }
 
     private void FixedUpdate()
@@ -47,19 +58,28 @@ public class SpellScript : MonoBehaviour
     {
         if (collision.tag == "Hitbox" && collision.transform == MyTarget)
         {
-            //calls this script so the damage gets sent to the right place
-            var health = MyTarget.GetComponent<EnemyCharacterStats>();
-            //sends magic damage to colliding unit
-            health.SendMessage("MagicalDamage", damageDealt);
+
+            Character c = collision.GetComponentInParent<Character>();
+            speed = 0;
+            c.TakeDamage(damage, source);
             GetComponent<Animator>().SetTrigger("impact");
             myRigidBody.velocity = Vector2.zero;
             MyTarget = null;
+
+            //Previous lines
+            //calls this script so the damage gets sent to the right place
+            //var health = MyTarget.GetComponent<EnemyCharacterStats>();
+            ////sends magic damage to colliding unit
+            ////health.SendMessage("MagicalDamage", damageDealt);
+            //GetComponent<Animator>().SetTrigger("impact");
+            //myRigidBody.velocity = Vector2.zero;
+            //MyTarget = null;
         }
     }
 
     //SAMS EDIT: adding magic modifier to spell script
-    private void MagicInput(float dmgMod)
-    {
-        damageDealt = dmgMod;
-    }
+    //private void MagicInput(float dmgMod)
+    //{
+    //    damageDealt = dmgMod;
+    //}
 }

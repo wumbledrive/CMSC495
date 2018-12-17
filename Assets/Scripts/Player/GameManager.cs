@@ -1,24 +1,25 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
-
-    // A reference to the player object
+    
+    /// <summary>
+    /// A reference to the player object
+    /// </summary>
     [SerializeField]
     private Player player;
 
     private NPC currentTarget;
 
-	
 	// Update is called once per frame
-	void Update () {
-        //Updates on clicked target
+	void Update ()
+    {
+        //Executes click target
         ClickTarget();
 	}
 
-    //Mouse click to get target
     private void ClickTarget()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())//If we click the left mouse button
@@ -36,9 +37,13 @@ public class GameManager : MonoBehaviour {
                 currentTarget = hit.collider.GetComponent<NPC>(); //Selects the new target
 
                 player.MyTarget = currentTarget.Select(); //Gives the player the new target
+
+                //UIManager.MyInstance.ShowTargetFrame(currentTarget);
             }
             else//Deselect the target
             {
+                //UIManager.MyInstance.HideTargetFrame();
+
                 if (currentTarget != null) //If we have a current target
                 {
                     currentTarget.DeSelect(); //We deselct it
@@ -49,6 +54,6 @@ public class GameManager : MonoBehaviour {
                 player.MyTarget = null;
             }
         }
-
+   
     }
 }
