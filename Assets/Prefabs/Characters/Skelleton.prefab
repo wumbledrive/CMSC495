@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114209492203614672}
   - component: {fileID: 95729179631207222}
   - component: {fileID: 114457827886908600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skelleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -125,8 +125,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  direction: {x: 0, y: 0}
   hitBox: {fileID: 0}
+  health: {fileID: 0}
+  initHealth: 0
+  portrait: {fileID: 0}
   healthGroup: {fileID: 0}
+  initAggroRange: 0
 --- !u!114 &114925525550302214
 MonoBehaviour:
   m_ObjectHideFlags: 1

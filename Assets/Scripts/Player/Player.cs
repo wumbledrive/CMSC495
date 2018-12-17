@@ -170,20 +170,20 @@ public class Player : Character
     }
 
     //takes physical damage
-    //public void PhysicalDamage(float incDmg)
-    //{
-    //float damage = incDmg - Defense.FinalValue();
+    public void PhysicalDamage(float incDmg)
+    {
+    float damage = incDmg - Defense.FinalValue();
     //Use the enemy's strength and player defense to calculate damage to the player
-    //health.MyCurrentValue -= damage;
-    //}
+    health.MyCurrentValue -= damage;
+    }
 
     //takes magic damage
-    //public void MagicalDamage(float incDmg)
-    //{
-    //float damage = incDmg - Intelligence.FinalValue();
+    public void MagicalDamage(float incDmg)
+    {
+    float damage = incDmg - Intelligence.FinalValue();
     //Use the enemy's strength and player defense to calculate damage to the player 
-    //health.MyCurrentValue -= damage;
-    //}
+    health.MyCurrentValue -= damage;
+    }
 
 
     //Attack timing and stopattack check

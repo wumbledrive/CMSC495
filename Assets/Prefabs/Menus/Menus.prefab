@@ -4768,6 +4768,7 @@ MonoBehaviour:
   pauseUI: {fileID: 1499888857747430}
   gameOverUI: {fileID: 1656637740466030}
   invUI: {fileID: 1586534326605902}
+  warningUI: {fileID: 0}
 --- !u!114 &114762558439041046
 MonoBehaviour:
   m_ObjectHideFlags: 1

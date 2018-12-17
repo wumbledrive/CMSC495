@@ -8,13 +8,16 @@ public class PauseMenu : MonoBehaviour {
     public static bool gamePaused;
     public static bool invOpen;
     public static bool gameOver;
+    public static bool warningUp;
 
-    public GameObject pauseUI, gameOverUI, invUI;
+    public GameObject pauseUI, gameOverUI, invUI, warningUI;
 	
     public void Awake() {
         gamePaused = false;
         invOpen = false;
         gameOver = false;
+        warningUp = true;
+        Time.timeScale = 0f;
     }
 
 	// Update is called once per frame
@@ -53,7 +56,9 @@ public class PauseMenu : MonoBehaviour {
         Debug.Log("game resumed");
         pauseUI.SetActive(false);
         invUI.SetActive(false);
+        warningUI.SetActive(false);
         gamePaused = false;
+        warningUp = false;
         invOpen = false;
         Time.timeScale = 1f;
     }
