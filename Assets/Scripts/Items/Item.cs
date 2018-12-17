@@ -13,8 +13,9 @@ public class Item : ScriptableObject
     public int MaximumStack = 1;
     private void OnValidate()
     {
-        string path = AssetDatabase.GetAssetPath(this);
-        id = AssetDatabase.AssetPathToGUID(path);
+        //   string path = AssetDatabase.GetAssetPath(this);
+        //  id = AssetDatabase.AssetPathToGUID(path);
+        Debug.Log("item bug commented out here");
     }
 
     public virtual Item GetCopy()
