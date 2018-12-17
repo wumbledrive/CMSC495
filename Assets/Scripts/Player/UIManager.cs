@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Keycodes used for executing the action buttons
     /// </summary>
-    private KeyCode action1, action2, action3;
+    private KeyCode action1, action2, action3, action4;
 
     [SerializeField]
     private GameObject targetFrame;
@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
         action1 = KeyCode.Alpha1;
         action2 = KeyCode.Alpha2;
         action3 = KeyCode.Alpha3;
+        action3 = KeyCode.Space;
     }
 
     // Update is called once per frame
