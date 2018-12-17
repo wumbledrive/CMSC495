@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         action1 = KeyCode.Alpha1;
         action2 = KeyCode.Alpha2;
         action3 = KeyCode.Alpha3;
-        action3 = KeyCode.Space;
+        action4 = KeyCode.Space;
     }
 
     // Update is called once per frame
@@ -65,6 +65,10 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(action3))
         {
             ActionButtonOnClick(2);
+        }
+        if (Input.GetKeyDown(action4))
+        {
+            ActionButtonOnClick(3);
         }
     }
 
